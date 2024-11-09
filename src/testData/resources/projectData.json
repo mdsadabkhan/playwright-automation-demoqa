@@ -1,0 +1,24 @@
+{
+    "station":{
+        "KMME": "KUMARDUBI - KMME (ASANSOL)",
+        "CPR" : "CHHAPRA - CPR",
+        "PUNE": "PUNE JN - PUNE (PUNE)",
+        "DDA": "DURAUNDHA JN - DDA ",
+        "ASN": "ASANSOL JN - ASN (ASANSOL)",
+        "DHN": "DHANBAD JN - DHN ",
+        "HWH": "HOWRAH JN - HWH (Howrah / Kolkata)",
+        "TATA": "TATANAGAR JN - TATA (TATANAGAR)"
+    },
+    "sadabKhan":{
+        "name": "Md Sadab H Khan",
+        "username" : "sadab6927",
+        "email": "mdsadabkhan@gmail.com",
+        "password": "Tahmeena84"
+    },
+    "nazreImam":{
+        "name": "Nazre Imam Khan",
+        "username": "Imam648",
+        "email": "khan8434005323@gmail.com",
+        "password": "Tahmeena@84"
+    }
+}

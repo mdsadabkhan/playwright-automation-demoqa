@@ -1,0 +1,18 @@
+{
+    "passsadabKhan":{
+        "name": "Md Sadab H Khan",
+        "age" : "26"
+    },
+    "passnazreImam":{
+        "name": "Nazre Imam Khan",
+        "age" : "57"
+    },
+    "passTahmeena":{
+        "name": "Tahmeena Khatoon",
+        "age": "50"
+    },
+    "passJaved":{
+        "name": "Javed Khan",
+        "age": "44"
+    }
+}
