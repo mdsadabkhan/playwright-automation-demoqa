@@ -1,24 +1,31 @@
 import { expect } from '@playwright/test' 
 import {test} from '../../app_common/fixtures/page.fixture' 
 
-// const credentials = JSON.parse(JSON.stringify(require('../../testData/resources/projectData.json'))) 
-// const userDetails = JSON.parse(JSON.stringify(require('../../testData/resources/userData.json'))) 
+const userDetails = JSON.parse(JSON.stringify(require('../../src/testData/resources/userData.json'))) 
 
-// const user = credentials.sadabKhan.username
-// const pass = credentials.sadabKhan.password
-// const from = credentials.station.PUNE
-// const to= credentials.station.HWH
-// const newFrom= credentials.station.KMME
-// const newTo = credentials.station.CPR
+const fullName = userDetails.Sadab.fullName
+const email= userDetails.Sadab.email
+const currentAddress= userDetails.Sadab.currentAddress
+const permanentAddress=userDetails.Sadab.permanentAddress
 
-test('To Book an IRCTC Ticket in normal time', async ({ page, utils, homePage }, testInfo) => {
+test('To Verify all the section of DEMO page', async ({ page, utils, homePage, elementsPage, textboxSideTab }, testInfo) => {
    
-    await test.step('1). Open the IRCTC HomePage', async () => {
+    await test.step('1). Open website', async () => {
         await homePage.openDemoQAUrl() 
         await utils.getTitle() 
     }) 
-    await test.step('2). Click On Login option and add Login Credentials', async () => {
-        await homePage.openAlertsFramesAndWindowsTab()
-        await utils.pause()
+    await test.step('2). Navigate to elements tab', async () => {
+        await homePage.openElementsTab()
+    }) 
+    await test.step('3). Open TextBoxSideTab', async () => {
+        await elementsPage.navigateToTextBoxSideTab()
+    }) 
+    await test.step('4). Add details in textbox tab', async () => {
+        await textboxSideTab.enterFullName(fullName)
+        await textboxSideTab.enterEmail(email)
+        await textboxSideTab.enterCurrentAddress(currentAddress)
+        await textboxSideTab.enterPermanentAddress(permanentAddress)
+        await textboxSideTab.clickOnSubmitButton()
+        await textboxSideTab.verifyTheAddedDetails(fullName,currentAddress,email,permanentAddress)
     }) 
 }) 

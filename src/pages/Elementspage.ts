@@ -25,5 +25,33 @@ class ElementsPage extends Utils{
         this.dynamicPropertiesSideTab='div.show>ul>li:nth-of-type(9)'
     }
 
+    async navigateToTextBoxSideTab(){
+        this.clickOn(this.textBoxSideTab)
+    }
+    async navigateToCheckBoxSideTab() {
+        await this.clickOn(this.checkBoxSideTab);
+    }
+    async navigateToRadioButtonSideTab() {
+        await this.clickOn(this.radioButtonSideTab);
+    }
+    async navigateToWebTablesSideTab() {
+        await this.clickOn(this.webTablesSideTab);
+    }
+    async navigateToButtonsSideTab() {
+        await this.clickOn(this.buttonsSideTab);
+    }
+    async navigateToLinksSideTab() {
+        await this.clickOn(this.linksSideTab);
+    }
+    async navigateToBrokenLinksImagesSideTab() {
+        await this.clickOn(this.brokenLinksImagesSideTab);
+    }
+    async navigateToUploadAndDownloadSideTab() {
+        await this.clickOn(this.uploadAndDownloadSidetab);
+    }
+    async navigateToDynamicPropertiesSideTab() {
+        await this.clickOn(this.dynamicPropertiesSideTab);
+    }
+
 } 
 export default ElementsPage

@@ -1,4 +1,4 @@
-import test from '../app_common/fixtures/page.fixture'
+import test from './fixtures/page.fixture'
 
 test.beforeAll(async ({})=>{
 

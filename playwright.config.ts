@@ -2,7 +2,7 @@ import { defineConfig, devices } from '@playwright/test'
 import dotenv from "dotenv"
 
 dotenv.config({
-  path: './app_commons/environments/.env.test'
+  path: './app_common/environments/.env.test'
 })
 
 export default defineConfig({

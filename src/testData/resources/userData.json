@@ -1,18 +1,26 @@
 {
-    "passsadabKhan":{
-        "name": "Md Sadab H Khan",
-        "age" : "26"
+    "Sadab":{
+        "fullName": "Md Sadab Hussain Khan",
+        "email" : "mdsadabkhan@gmail.com",
+        "currentAddress":"Pune, Maharashtra",
+        "permanentAddress": "Dhanbad, Jharkhand"
     },
-    "passnazreImam":{
-        "name": "Nazre Imam Khan",
-        "age" : "57"
+    "Rohan":{
+        "fullName": "Rohan Singh",
+        "email" : "rohanSingh@proton.com",
+        "currentAddress":"Banglore, Karnataka",
+        "permanentAddress": "Kanpur, Uttar Pradesh"
     },
-    "passTahmeena":{
-        "name": "Tahmeena Khatoon",
-        "age": "50"
+    "Anurag":{
+        "fullName": "Anurag Pandey",
+        "email" : "anurag7779@outlook.com",
+        "currentAddress":"Mysore, Karnataka",
+        "permanentAddress": "Ayodhya, Uttar Pradesh"
     },
-    "passJaved":{
-        "name": "Javed Khan",
-        "age": "44"
+    "Asutosh":{
+        "fullName": "Ashutosh Kumar",
+        "email" : "ashu2899@yahoo.com",
+        "currentAddress":"Chennai, Tamil Nadu",
+        "permanentAddress": "Patna, Bihar"
     }
 }
