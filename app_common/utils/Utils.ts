@@ -44,9 +44,21 @@ class Utils {
     async keyPress(selector: string, key: string) {
         return await this.page.press(selector, key);
     }
-    async takeScreenshot(screenshotName: PageScreenshotOptions | undefined) {
-        return await this.page.screenshot(screenshotName);
+    async takeScreenshot(fileName: string = 'screenshot.png') {
+        // Default base directory where screenshots will be stored
+        const baseDir = path.join(__dirname, '../../src/screenshots'); // You can change this to another folder if you want
+
+        // Ensure the directory exists, if not create it
+        if (!fs.existsSync(baseDir)) {
+            fs.mkdirSync(baseDir, { recursive: true });
+        }
+        // Build the full file path using the base directory and the provided filename
+        const filePath = path.join(baseDir, fileName);
+
+        // Take the screenshot and save it at the resolved file path
+        await this.page.screenshot({ path: filePath })
     }
+
     async refreshBrowser() {
         return await this.page.reload();
     }

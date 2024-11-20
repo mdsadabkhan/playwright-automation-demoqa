@@ -33,7 +33,7 @@ class CheckBoxSideTab extends Utils{
         this.expandAllOption='button.rct-option-expand-all'
         this.collapseAllOption='button[aria-label="Collapse all"]'
         this.expandHomeOption='button.rct-collapse-btn'
-        this.expandDesktopOption=''
+        this.expandDesktopOption='button.rct-collapse:nth-of-type(1)'
         this.expandDocumentOption=''
         this.expandDownloadoption=''
         this.expandWorkSpaceOption=''
@@ -55,6 +55,18 @@ class CheckBoxSideTab extends Utils{
         this.downloadsCheckBox=''
         this.wordfiledocCheckbox=''
         this.excelFileDocCheckbox=''
+    }
+    async expandAllSectionAtOnce(){
+        await this.clickOn(this.expandAllOption)
+    }
+    async collapseAllSectionAtOnce(){
+        await this.clickOn(this.collapseAllOption)
+    }
+    async expandHomeSection(){
+        await this.clickOn(this.expandHomeOption)
+    }
+    async expandDesktopSection(){
+        await this.clickOn(this.expandDesktopOption)
     }
     //also verify the submitted details below
     

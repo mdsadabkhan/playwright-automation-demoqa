@@ -45,13 +45,10 @@ class TextboxSideTab extends Utils{
             await this.verifyElementContainsText(this.nameVerification , `Name:${fullName}`)
             console.log(`Verified Full Name As: "${fullName}"`)
             await this.verifyElementContainsText(this.emailVerification , `Email:${email}`)
-            console.log(`Verified Emials As: "${email}"`)
             await this.verifyElementContainsText(this.currentAdrdessVerification , `Current Address :${currentAddress}`)
-            console.log(`Verified Current Address As: "${currentAddress}"`)
             await this.verifyElementContainsText(this.permanentAddressVerification , `Permananet Address :${permanentAddress}`)
-            console.log(`Verified Permanent Address As: "${permanentAddress}"`)
 
-            console.log("Details verified succesfully......")
+            console.log("Text box Details verified succesfully......")
         }
         catch(error){
             console.log('Veification Failed.....')

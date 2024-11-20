@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "homePage": "npx playwright test tests/ui/HomePageVerification.test.ts"
+    "homePage": "npx playwright test tests/ui/HomePageVerification.test.ts",
+    "showReport": "npx playwright show-report"
   },
   "keywords": [],
   "author": "",
