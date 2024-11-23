@@ -6,6 +6,8 @@ import Utils from '../utils/Utils'
 import ElementsPage from '../../src/pages/Elementspage'
 import CheckBoxSideTab from '../../src/pages/CheckBoxSideTab'
 import TextboxSideTab from '../../src/pages/TextboxSidetab'
+import RadioButton from '../../src/pages/radioButton'
+import WebComponent from '../../src/pages/WebComponent'
 
 type TestFixture = {
     homePage : HomePage
@@ -13,6 +15,9 @@ type TestFixture = {
     elementsPage: ElementsPage
     checkBoxSideTab: CheckBoxSideTab
     textboxSideTab: TextboxSideTab
+    radioButton: RadioButton
+    webComponent: WebComponent
+
 }
  export const test = fixture.extend<TestFixture>({
 
@@ -30,6 +35,12 @@ type TestFixture = {
     },
     textboxSideTab: async ({page}, use)=>{
         await use(new TextboxSideTab(page))
+    },
+    radioButton: async ({page}, use)=>{
+        await use(new RadioButton(page))
+    },
+    webComponent: async ({page}, use)=>{
+        await use(new WebComponent(page))
     }
     
 

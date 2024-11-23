@@ -7,7 +7,7 @@ const email= userDetails.Sadab.email
 const currentAddress= userDetails.Sadab.currentAddress
 const permanentAddress=userDetails.Sadab.permanentAddress
 
-test('To Verify all the section of DEMO page', async ({ page, utils, homePage, elementsPage, textboxSideTab, checkBoxSideTab }, testInfo) => {
+test('To Verify all the section of DEMO page', async ({ page, utils, homePage, elementsPage, textboxSideTab, checkBoxSideTab, radioButton }, testInfo) => {
    
     await test.step('1). Open website', async () => {
         await homePage.openDemoQAUrl() 
@@ -35,9 +35,17 @@ test('To Verify all the section of DEMO page', async ({ page, utils, homePage, e
         await checkBoxSideTab.expandAllSectionAtOnce()
         await utils.takeScreenshot('ExpandedSection.png')
         await checkBoxSideTab.collapseAllSectionAtOnce()
-        await checkBoxSideTab.expandHomeSection()
-        await utils.takeScreenshot('ExpandedHomeSection.png')
-
-
+        // await checkBoxSideTab.expandHomeSection()
+        // await utils.takeScreenshot('ExpandedHomeSection.png')
     })
+    await test.step('7). Navigate to Radio button Side Tab', async()=>{
+        await elementsPage.navigateToRadioButtonSideTab()
+    })
+    await test.step('8). Complete options on Radio button Side Tab', async()=>{
+        await radioButton.clickOnYesForRadioOption()
+        await radioButton.clickOnImpressiveRadioOption()
+        await radioButton.verifyNoRadioButtonDisabled()
+        await utils.takeScreenshot('radioVerification.png')
+    })
+
 }) 

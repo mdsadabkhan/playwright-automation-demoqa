@@ -7,9 +7,9 @@ dotenv.config({
 
 export default defineConfig({
   testDir: './tests',
-  timeout: 6*20*1000,
+  timeout: 6*5*1000,
   expect:{
-    timeout: 50000},
+    timeout: 20000},
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
@@ -19,7 +19,7 @@ export default defineConfig({
     headless: false,
     screenshot: 'on',
     video: 'retain-on-failure',
-    actionTimeout: 50000,
+    actionTimeout: 20000,
     ignoreHTTPSErrors: true,
     trace: 'on-first-retry',
   },
