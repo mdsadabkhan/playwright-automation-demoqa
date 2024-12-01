@@ -1,6 +1,6 @@
 import Utils from "../../app_common/utils/Utils"
 
-class WebComponent extends Utils{
+class WebTable extends Utils{
    addButton: string
    searchboxOption: string
    addFirstName: string
@@ -30,6 +30,7 @@ class WebComponent extends Utils{
     }
     async clickOnAddButton(){
         await this.clickOn(this.addButton)
+        await this.isElementVisible(this.registrationFormWindow, 'Registration Window is not Visible to Add details.....')
     }
     async searchForAvailableDetails(addDetailsToSearch: string){
         await this.enterText(this.searchboxOption, addDetailsToSearch)
@@ -37,5 +38,28 @@ class WebComponent extends Utils{
     async enterFirstName(firstName: string){
         await this.enterText(this.addFirstName, firstName)
     }
+    async enterLastName(lastName: string){
+        await this.enterText(this.addLastName, lastName)
+    }
+    async enterEmailAddres(emial: string){
+        await this.enterText(this.addEmail, emial)
+    }
+    async enterAge(age: string){
+        await this.enterText(this.addAge, age)
+    }
+    async enterSalaryAmount( salary: string){
+        await this.enterText(this.addSalary, salary)
+    }
+    async enterDepartment(department: string){
+        await this.enterText(this.addDepartment, department)
+    }
+    async clickOnSubmitButton(){
+        await this.clickOn(this.submitButton)
+    }
+    async clcikOnCloseRegistrationWindow(){
+        await this.clickOn(this.closeWindowOption)
+    }
+
+
     
-} export default WebComponent
+} export default WebTable

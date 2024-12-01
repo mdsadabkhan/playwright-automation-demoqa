@@ -1,24 +1,42 @@
 {
-    "station":{
-        "KMME": "KUMARDUBI - KMME (ASANSOL)",
-        "CPR" : "CHHAPRA - CPR",
-        "PUNE": "PUNE JN - PUNE (PUNE)",
-        "DDA": "DURAUNDHA JN - DDA ",
-        "ASN": "ASANSOL JN - ASN (ASANSOL)",
-        "DHN": "DHANBAD JN - DHN ",
-        "HWH": "HOWRAH JN - HWH (Howrah / Kolkata)",
-        "TATA": "TATANAGAR JN - TATA (TATANAGAR)"
+    "sagar":{
+        "firstName": "Sagar",
+        "lastName" : "Ramesh",
+        "email": "sagar@gmail.com",
+        "age": "27",
+        "salary": "30000",
+        "department": "Finance"
     },
-    "sadabKhan":{
-        "name": "Md Sadab H Khan",
-        "username" : "sadab6927",
-        "email": "mdsadabkhan@gmail.com",
-        "password": "Tahmeena84"
+    "santosh":{
+        "firstName": "Santosh",
+        "lastName" : "Kumar",
+        "email": "santoshKS@gmail.com",
+        "age": "30",
+        "salary": "70000",
+        "department": "Insurance"
     },
-    "nazreImam":{
-        "name": "Nazre Imam Khan",
-        "username": "Imam648",
-        "email": "khan8434005323@gmail.com",
-        "password": "Tahmeena@84"
+    "pratik":{
+        "firstName": "Pratik",
+        "lastName" : "Bhatkar",
+        "email": "patrickb@outlook.com",
+        "age": "29",
+        "salary": "120000",
+        "department": "Lead"
+    },
+    "rohit":{
+        "firstName": "Rohit",
+        "lastName" : "Kumar",
+        "email": "rkumar@proton.com",
+        "age": "25",
+        "salary": "81000",
+        "department": "Automation"
+    },
+    "deepali":{
+        "firstName": "Deepali",
+        "lastName" : "S",
+        "email": "depaliS@gmail.com",
+        "age": "33",
+        "salary": "98000",
+        "department": "Group Lead Specialist"
     }
 }
