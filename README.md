@@ -1,4 +1,4 @@
-# playwright-irctc-automation
+# playwright-automation-demoqa
 To use this Repo, install playwrights by passing the below command in VS code terminal:
 Command: npm install playwright@latest
 # Install below dependencies
