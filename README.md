@@ -15,6 +15,7 @@ Command: npm install playwright@latest
  7. npm install exceljs
  8. npm install @playwright/test picocolors dayjs
  9. npm install @axe-core/playwright
+ 10. npm install -D allure-playwright 
 # To run a script, pass the detailas as below:
 npx playwright test location/of/testcase.test.ts
 
