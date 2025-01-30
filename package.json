@@ -4,6 +4,9 @@
   "main": "index.js",
   "scripts": {
     "homePage": "npx playwright test tests/ui/HomePageVerification.test.ts",
+    "homePageWithReport": "npx playwright test tests/ui/HomePageVerification.test.ts --reporter=line,allure-playwright",
+    "generateReport": "allure generate ./allure-results --clean",
+    "openReport": "allure open ./allure-report",
     "showReport": "npx playwright show-report"
   },
   "keywords": [],
@@ -11,7 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.48.2",
-    "@types/node": "^22.9.0"
+    "@types/node": "^22.9.0",
+    "allure-playwright": "^3.1.0"
   },
   "directories": {
     "test": "tests"
