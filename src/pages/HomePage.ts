@@ -10,6 +10,7 @@ class HomePage extends Utils{
     widgetsSection: string
     interactionSection: string
     bookStoreApplicationSection: string
+    buttonsSection: string
 
     constructor(page: any){
         super(page)
@@ -21,6 +22,7 @@ class HomePage extends Utils{
         this.widgetsSection='div.category-cards>div:nth-of-type(4)'
         this.interactionSection='div.category-cards>div:nth-of-type(5)'
         this.bookStoreApplicationSection='div.category-cards>div:nth-of-type(6)'
+        this.buttonsSection='div.category-cards>div:nth-of-type(7)'
 
     }
     async openDemoQAUrl(){

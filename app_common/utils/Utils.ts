@@ -34,6 +34,9 @@ class Utils {
     async doubleClickOn(selector: string) {
         await this.page.dblclick(selector);
     }
+    async rightClickOn(selector: string) {
+        return await this.page.click(selector, { button: 'right' });
+    }
     async enterText(selector: string, text: string) {
         return await this.page.fill(selector, text);
     }
