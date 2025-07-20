@@ -20,19 +20,19 @@ class DynamicPropertiesTab extends Utils {
     //     await this.clickOn(this.enableButton)
     // }
     async clickOnEnableButton() {
-        const button = this.page.locator(this.enableButton);
-        const isInitiallyEnabled = await button.isEnabled();
+        const button = this.page.locator(this.enableButton)
+        const isInitiallyEnabled = await button.isEnabled()
             if (!isInitiallyEnabled) {
-                console.log('Button is not enabled yet. Waiting for it to become enabled...');
+                console.log('Button is not enabled yet. Waiting for it to become enabled...')
             }   
-        await this.wait(5000); // wait for 5 seconds
+        await this.wait(6000)
 
             const isEnabledAfterWait = await button.isEnabled();
                 if (isEnabledAfterWait) {
-                    console.log('Button is now enabled. Clicking...');
-                await button.click();
+                    console.log('Button is now enabled. Clicking...')
+                await button.click()
                 } else {
-            throw new Error('Button is still not enabled after waiting.');
+            throw new Error('Button is still not enabled after waiting.')
                 }
     }
     async clickOnColorChangeButton() {
