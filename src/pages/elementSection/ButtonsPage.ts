@@ -1,4 +1,4 @@
-import Utils from '../../app_common/utils/Utils';
+import Utils from '../../../app_common/utils/Utils';
 import { Page, Locator } from '@playwright/test';
 
 class ButtonsPage extends Utils{

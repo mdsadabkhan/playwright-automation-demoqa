@@ -1,15 +1,18 @@
 import {test as fixture} from '@playwright/test'
 
 
-import HomePage from '../../src/pages/homepage'
+import HomePage from '../../src/pages/elementSection/HomePage'
 import Utils from '../utils/Utils'
-import ElementsPage from '../../src/pages/Elementspage'
-import CheckBoxSideTab from '../../src/pages/CheckBoxSideTab'
-import TextboxSideTab from '../../src/pages/TextboxSidetab'
-import RadioButton from '../../src/pages/radioButton'
-import WebTable from '../../src/pages/WebTableSideTab'
-import ButtonsPage from '../../src/pages/ButtonsPage'
-import LinksSideTab from '../../src/pages/LinksSideTab'
+import ElementsPage from '../../src/pages/elementSection/Elementspage'
+import CheckBoxSideTab from '../../src/pages/elementSection/CheckBoxSideTab'
+import TextboxSideTab from '../../src/pages/elementSection/TextboxSidetab'
+import RadioButton from '../../src/pages/elementSection/RadioButton'
+import WebTable from '../../src/pages/elementSection/WebTableSideTab'
+import ButtonsPage from '../../src/pages/elementSection/ButtonsPage'
+import LinksSideTab from '../../src/pages/elementSection/LinksSideTab'
+import BrockenLinksImage from '../../src/pages/elementSection/BrockenLinksImage'
+import UploadAndDownloadSideTab from '../../src/pages/elementSection/UploadAndDownloadSideTab'
+import DynamicPropertiesTab from '../../src/pages/elementSection/DynamicPropertiesTab'
 
 type TestFixture = {
     buttonsPage: ButtonsPage
@@ -21,6 +24,9 @@ type TestFixture = {
     radioButton: RadioButton
     webTable: WebTable
     linksSideTab: LinksSideTab
+    brockenLinksImage: BrockenLinksImage
+    uploadAndDownloadSideTab: UploadAndDownloadSideTab
+    dynamicPropertiesTab: DynamicPropertiesTab
 
 }
  export const test = fixture.extend<TestFixture>({
@@ -51,6 +57,15 @@ type TestFixture = {
     },
     linksSideTab: async ({page}, use)=>{
         await use(new LinksSideTab(page))
+    },
+    brockenLinksImage: async ({page}, use)=>{
+        await use(new BrockenLinksImage(page))
+    },
+    uploadAndDownloadSideTab: async ({page}, use)=>{
+        await use(new UploadAndDownloadSideTab(page))
+    },
+    dynamicPropertiesTab: async ({page}, use)=>{
+        await use(new DynamicPropertiesTab(page))
     }
 
  })

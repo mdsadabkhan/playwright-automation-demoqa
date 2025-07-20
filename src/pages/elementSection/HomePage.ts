@@ -1,5 +1,5 @@
-import Utils from '../../app_common/utils/Utils'
-import ENV from '../../app_common/environments/env'
+import Utils from '../../../app_common/utils/Utils'
+import ENV from '../../../app_common/environments/env'
 
 
 class HomePage extends Utils{

@@ -1,4 +1,4 @@
-import Utils from "../../app_common/utils/Utils";
+import Utils from "../../../app_common/utils/Utils";
 
 class TextboxSideTab extends Utils{
     fullName:string

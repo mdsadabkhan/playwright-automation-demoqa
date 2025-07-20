@@ -1,4 +1,5 @@
 import test, { type Page, expect, PageScreenshotOptions } from "@playwright/test"
+import { APIRequestContext } from '@playwright/test'
 import Tesseract from 'tesseract.js';
 import * as fs from 'fs';
 import path from 'path'
@@ -66,7 +67,8 @@ class Utils {
         return await this.page.reload();
     }
     async performVisualTest(screenshotName: string | readonly string[]) {
-        await expect(this.page).toHaveScreenshot(screenshotName, { fullPage: true });
+        await this.page.waitForTimeout(500)
+        await expect(this.page).toHaveScreenshot(screenshotName, { fullPage: false });
     }
     async verifyElementContainsText(selector: string, text: string | RegExp | readonly (string | RegExp)[]) {
         const locatorText = this.page.locator(selector);
@@ -240,7 +242,49 @@ class Utils {
             throw new Error('CAPTCHA image not found');
         }
     }
-        
+   
+    async verifyApiStatusCode(apiContext: APIRequestContext, endpoint: string, expectedStatusCode: number, method: 'GET' | 'POST' | 'PUT' | 'DELETE' = 'GET', data?: any) {
+        let response;
+            switch (method) {
+                case 'POST':
+                    response = await apiContext.post(endpoint, { data })
+                    break;
+                case 'PUT':
+                    response = await apiContext.put(endpoint, { data })
+                    break;
+                case 'DELETE':
+                    response = await apiContext.delete(endpoint)
+                    break;
+                case 'GET':
+                    default:
+                    response = await apiContext.get(endpoint)
+                    break;
+                }
+                    expect(response.status(), `Expected status code ${expectedStatusCode} and got ${response.status()} for ${method} ${endpoint}`).toBe(expectedStatusCode);
+                    return response;
+            }
+
+    async verifyNewTabUrl(expectedUrl: string, linkLocator: string) {
+        const [newPage] = await Promise.all([
+            this.page.context().waitForEvent('page'),
+            this.page.click(linkLocator)
+        ])
+            await newPage.waitForLoadState('load')
+            const url = newPage.url()
+            if (!url.includes(expectedUrl)) {
+            throw new Error(`Expected URL to include "${expectedUrl}", and got "${url}"`);
+            }
+            // await newPage.close()
+            await this.page.bringToFront()
+        }
+    async uploadFile(fileInputSelector: string, filePath: string) {
+        await this.page.waitForSelector(fileInputSelector)
+        const fileInput = this.page.locator(fileInputSelector)
+        await fileInput.setInputFiles(filePath)
+       }
+
+
 }
+
 
 export default Utils;

@@ -1,4 +1,4 @@
-import Utils from "../../app_common/utils/Utils";
+import Utils from "../../../app_common/utils/Utils";
 import { expect, type Page } from "@playwright/test";
 
 class CheckBoxSideTab extends Utils{

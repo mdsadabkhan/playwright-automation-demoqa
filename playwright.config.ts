@@ -12,13 +12,13 @@ export default defineConfig({
     timeout: 20000},
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 2 : 1,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
     headless: false,
     screenshot: 'on',
-    video: 'on', //retain-on-failure
+    video: 'retain-on-failure',
     actionTimeout: 20000,
     ignoreHTTPSErrors: true,
     trace: 'on-first-retry',

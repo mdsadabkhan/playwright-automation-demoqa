@@ -11,14 +11,14 @@ test('To Verify the actions on links side tab', async ({ page, utils, homePage, 
     await test.step('3). Open Links Side Tab', async () => {
         await elementsPage.navigateToLinksSideTab()
     }) 
-    // await test.step('4). Click on the Home Page Link', async () => {
-    //     await linksSideTab.clickOnHomePageLink()
-    //     await utils.takeScreenshot('homePageLink.png')
-    // }) 
-    // await test.step('5). Click on the Home Ns2 Link', async () => {
-    //     await linksSideTab.clickOnHomeNs2Link()
-    //     await utils.takeScreenshot('homeNs2Link.png')
-    // }) 
+    await test.step('4). Click on the Home Page Link', async () => {
+        await linksSideTab.clickOnHomePageLink()
+        await utils.takeScreenshot('homePageLink.png')
+    }) 
+    await test.step('5). Click on the Home Ns2 Link', async () => {
+        await linksSideTab.clickOnHomeNs2Link('https://demoqa.com/')
+        await utils.takeScreenshot('homeNs2Link.png')
+    }) 
     await test.step('6). Click on the Created Link', async () => {
         await linksSideTab.clickOnCreatedLink()
         await utils.takeScreenshot('createdLink.png')
