@@ -14,7 +14,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 1,
   workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  reporter: [['html', { outputFolder: 'playwright-report', open: 'never' }]],
   use: {
     headless: false,
     screenshot: 'on',
