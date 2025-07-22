@@ -283,6 +283,22 @@ class Utils {
         await fileInput.setInputFiles(filePath)
        }
 
+    async selectRadioOptionByLabel(label: string, valueMap: Record<string, string>) {
+    const selector = valueMap[label]
+    await this.clickOn(selector)
+    }
+
+    async selectDateFromCalendar(dateInputSelector: string, dateString: string) {
+        const [day, month, year] = dateString.split(" ")
+        await this.clickOn(dateInputSelector)
+        const yearDropdown = this.page.locator(".react-datepicker__year-select")
+        await yearDropdown.selectOption({ label: year })
+        const monthDropdown = this.page.locator(".react-datepicker__month-select")
+        await monthDropdown.selectOption({ label: month })
+        const daySelector = `.react-datepicker__day--0${parseInt(day)}:not(.react-datepicker__day--outside-month)`
+        await this.page.click(daySelector)
+    }
+
 
 }
 

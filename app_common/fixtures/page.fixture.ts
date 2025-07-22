@@ -1,7 +1,7 @@
 import {test as fixture} from '@playwright/test'
 
 
-import HomePage from '../../src/pages/elementSection/HomePage'
+import HomePage from '../../src/pages/HomePage'
 import Utils from '../utils/Utils'
 import ElementsPage from '../../src/pages/elementSection/Elementspage'
 import CheckBoxSideTab from '../../src/pages/elementSection/CheckBoxSideTab'
@@ -13,6 +13,8 @@ import LinksSideTab from '../../src/pages/elementSection/LinksSideTab'
 import BrockenLinksImage from '../../src/pages/elementSection/BrockenLinksImage'
 import UploadAndDownloadSideTab from '../../src/pages/elementSection/UploadAndDownloadSideTab'
 import DynamicPropertiesTab from '../../src/pages/elementSection/DynamicPropertiesTab'
+import FormsTab from '../../src/pages/formSection/FormsTab'
+import PracticeForm from '../../src/pages/formSection/practiceForm'
 
 type TestFixture = {
     buttonsPage: ButtonsPage
@@ -27,6 +29,8 @@ type TestFixture = {
     brockenLinksImage: BrockenLinksImage
     uploadAndDownloadSideTab: UploadAndDownloadSideTab
     dynamicPropertiesTab: DynamicPropertiesTab
+    formsTab: FormsTab
+    practiceForm: PracticeForm
 
 }
  export const test = fixture.extend<TestFixture>({
@@ -66,6 +70,12 @@ type TestFixture = {
     },
     dynamicPropertiesTab: async ({page}, use)=>{
         await use(new DynamicPropertiesTab(page))
+    },
+    formsTab: async ({page}, use)=>{
+        await use(new FormsTab(page))
+    },
+    practiceForm: async ({page}, use)=>{
+        await use(new PracticeForm(page))
     }
 
  })

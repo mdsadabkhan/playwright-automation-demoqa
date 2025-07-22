@@ -16,7 +16,7 @@ const department= employee.rohit.department
 const employeemail= employee.santosh.email
 
 
-test('To Verify all the section of DEMO page', async ({ page, utils, homePage, elementsPage, textboxSideTab, checkBoxSideTab, radioButton, webTable, buttonsPage, linksSideTab, brockenLinksImage, uploadAndDownloadSideTab, dynamicPropertiesTab }, testInfo) => {
+test('To Verify all the section of from Elements section of the page', async ({ page, utils, homePage, elementsPage, textboxSideTab, checkBoxSideTab, radioButton, webTable, buttonsPage, linksSideTab, brockenLinksImage, uploadAndDownloadSideTab, dynamicPropertiesTab }, testInfo) => {
    
     await test.step('1). Open website', async () => {
         await homePage.openDemoQAUrl() 

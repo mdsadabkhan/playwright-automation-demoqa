@@ -25,7 +25,7 @@ class DynamicPropertiesTab extends Utils {
             if (!isInitiallyEnabled) {
                 console.log('Button is not enabled yet. Waiting for it to become enabled...')
             }   
-        await this.wait(6000)
+        await this.wait(5000)
 
             const isEnabledAfterWait = await button.isEnabled();
                 if (isEnabledAfterWait) {
