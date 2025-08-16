@@ -1,51 +1,24 @@
-# playwright-automation-demoqa
-To use this Repo, install playwrights by passing the below command in VS code terminal:
-Command: npm install playwright@latest
-# Install below dependencies
-1. npm install dotenv --save
-2. Also after installing dotenv, add below line in configSetupFile:
-   import dotenv from "dotenv"
-        dotenv.config({
-          path: './app_commons/environments/.env.test'
-       })
- 3. npm install dayjs --save
- 4. npm install jira-client
- 5. npm install tesseract.js
- 6. npm install playwright axios postman-collection
- 7. npm install exceljs
- 8. npm install @playwright/test picocolors dayjs
- 9. npm install @axe-core/playwright
- 10. npm install -D allure-playwright 
-# To run a script, pass the detailas as below:
-npx playwright test location/of/testcase.test.ts
+Playwright Automation Framework :
 
+This repository contains a custom-built Playwright Test Automation Framework designed for scalable, maintainable, and reusable end-to-end testing.
+The framework follows Page Object Model (POM) principles, includes custom utilities, and supports cross-browser, mobile emulation, and API testing.
 
-# Add below in config to ignore certificate/JS pop-up related issue:
-use: {
-    headless: false,
-    screenshot: 'on',
-    video: 'retain-on-failure',
-    actionTimeout: 50000,
-    ignoreHTTPSErrors: true,
-    trace: 'on-first-retry',
-  },
-  projects: [
-    {
-      name: 'chromium',
-      use: { channel: 'chromium',
-             viewport: null,
-             launchOptions:{
-              args: [
-                 '--disable-web-security',
-                 '--start-maximized',
-                 '--ignore-certificate-errors',
-                 '--ignore-urlfetcher-cert-request'
-              ]
-             }
-      },
-    }
-    ]
-# Also use below delays in define config section to run script efficiently as below:
-timeout: 6*60*1000,
-  expect:{
-    timeout: 50000},
+--> Key Features
+
+Page Object Model (POM) – Clean separation of test logic & UI elements
+
+Custom Utility Class – For reusable actions (clicks, inputs, waits, API calls, etc.)
+
+Fixtures & Hooks – Centralized setup/teardown for consistent test execution
+
+Environment-Specific Configurations – Using .env.test (can be extended for staging, prod, etc.)
+
+Test Data Management – JSON-based test data injection for easy maintenance
+
+Allure Reporting – Rich, interactive test execution reports
+
+Cross-Browser Support – Chromium, Firefox, WebKit
+
+Mobile Emulation – Execute tests in mobile viewports
+
+Scalable Architecture – Built for team collaboration and CI/CD pipelines
