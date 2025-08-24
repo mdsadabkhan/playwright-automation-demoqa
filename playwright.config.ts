@@ -8,7 +8,7 @@ dotenv.config({
 
 export default defineConfig({
   // globalSetup: require.resolve('./global-setup.ts'),
-  testDir: './tests/ui',
+  testDir: './tests',
   timeout: 6 * 5 * 1000,
   expect: {
     timeout: 20000
