@@ -1,8 +1,8 @@
 {
-    "sagar":{
-        "firstName": "Sagar",
-        "lastName" : "Ramesh",
-        "email": "sagar@gmail.com",
+    "jhon":{
+        "firstName": "Jhon",
+        "lastName" : "Snow",
+        "email": "jhonsnow@gmail.com",
         "age": "27",
         "salary": "30000",
         "department": "Finance"

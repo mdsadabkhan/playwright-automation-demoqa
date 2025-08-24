@@ -25,9 +25,6 @@ class PracticeForm extends Utils {
         this.firstNameInput = '#firstName'
         this.lastNameInput = '#lastName'
         this.emailInput = '#userEmail'
-        this.maleAsGender ='input[id="gender-radio-1"]'
-        this.femaleAsGender = 'input[id="gender-radio-2"]'
-        this.otherAsGender = 'input[id="gender-radio-3"]'
         this.mobileInput = '#userNumber'
         this.dateOfBirthInput = '#dateOfBirthInput'
         this.subjectsInput = '#subjectsInput'
@@ -50,12 +47,7 @@ class PracticeForm extends Utils {
         await this.enterText(this.emailInput, email)
     }
     async selectGender(gender: string) {
-        const genderMap = {
-            Male: this.maleAsGender,
-            Female: this.femaleAsGender,
-            Other: this.otherAsGender
-        }
-        await this.selectRadioOptionByLabel(gender, genderMap)
+        await this.page.getByText(gender , {exact: true}).click()
     }
     async fillMobileNumber(mobile: string) {
         await this.enterText(this.mobileInput, mobile)
@@ -63,23 +55,14 @@ class PracticeForm extends Utils {
     async selectDateOfBirthFromCalender(dob: string) {
         await this.selectDateFromCalendar(this.dateOfBirthInput, dob)
     }
-    async fillSubjects(subjects1: string, subjects2: string) {
-        await this.interactWithAutocomplete(this.subjectsInput, subjects1, subjects2)
+    async fillSubjects(...subjects: string[]) {
+        for (const subject of subjects) {
+            await this.enterText(this.subjectsInput, subject)
+            await this.page.selectOption(this.subjectsInput, { label: subject })
+        }
     }
     async selectHobbiesAs(hobby: string) {
-        switch (hobby) {
-            case 'Sports':
-                await this.clickOn(this.hobbiesAsSports)
-                break;
-            case 'Reading':
-                await this.clickOn(this.hobbiesAsReading)
-                break;
-            case 'Music':
-                await this.clickOn(this.hobbiesAsMusic)
-                break;
-            default:
-                throw new Error(`Unknown hobby: ${hobby}`)
-    }
+        await this.page.getByText(hobby).click()
     }
     async uploadPicture(filePath: string) {
         await this.uploadFile(this.pictureUploadInput, filePath)
@@ -96,6 +79,5 @@ class PracticeForm extends Utils {
     async clickOnSubmitButton() {
         await this.clickOn(this.submitButton)
     }   
-
 }
 export default PracticeForm

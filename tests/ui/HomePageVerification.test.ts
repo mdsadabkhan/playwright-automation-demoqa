@@ -8,12 +8,12 @@ const email= userDetails.Sadab.email
 const currentAddress= userDetails.Sadab.currentAddress
 const permanentAddress=userDetails.Sadab.permanentAddress
 
-const firstName = employee.santosh.firstName
-const lastName= employee.pratik.lastName
-const age= employee.sagar.age
-const salary= employee.deepali.salary
-const department= employee.rohit.department
-const employeemail= employee.santosh.email
+const firstName = employee.jhon.firstName
+const lastName= employee.jhon.lastName
+const age= employee.jhon.age
+const salary= employee.jhon.salary
+const department= employee.jhon.department
+const employeemail= employee.jhon.email
 
 
 test('To Verify all the section of from Elements section of the page', async ({ page, utils, homePage, elementsPage, textboxSideTab, checkBoxSideTab, radioButton, webTable, buttonsPage, linksSideTab, brockenLinksImage, uploadAndDownloadSideTab, dynamicPropertiesTab }, testInfo) => {

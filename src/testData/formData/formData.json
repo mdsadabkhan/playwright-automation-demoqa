@@ -1,6 +1,6 @@
 {
     "Sadab":{
-        "firstName": "Md Sadab Hussain",
+        "firstName": "Md Sadab",
         "lastName": "Khan",
         "email" : "mdsadabkhan@gmail.com",
         "gender": "Male",
@@ -12,8 +12,8 @@
     },
     "Rohan":{
         "firstName": "Rohan",
-        "lastName": "Singh",
-        "email" : "rohanSingh@email.com",
+        "lastName": "Kumar",
+        "email" : "rohank@email.com",
         "gender": "Male",
         "phoneNumber": "9876543210",
         "dateOfBirth": "15 Jan 1995",
