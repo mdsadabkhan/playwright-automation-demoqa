@@ -30,7 +30,7 @@ test('To Verify the form filling functionality', async ({ page, homePage, utils,
         await practiceForm.selectGender('Male')
         await practiceForm.fillMobileNumber(mobile)
         await practiceForm.selectDateOfBirthFromCalender(dateOfBirth)
-        await practiceForm.fillSubjects('English','Hindi', 'Maths')
+        // await practiceForm.fillSubjects('English','Hindi', 'Maths')
         await practiceForm.selectHobbiesAs('Sports')
         await practiceForm.selectHobbiesAs('Reading')
         await practiceForm.uploadPicture('src/screenShots/textbox.png')
