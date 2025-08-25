@@ -12,26 +12,26 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4   # updated from v3 to v4
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v4   # updated from v3 to v4
+        uses: actions/setup-node@v4
         with:
-          node-version: '18' # change if you need another version
+          node-version: '20'   # ✅ upgrade to Node.js 20 for Azure deps
 
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --no-optional   # ✅ skip fsevents (mac-only)
 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test --reporter=dot
+        run: npx playwright test --reporter=html   # ✅ generate HTML report
 
       - name: Upload Playwright HTML Report
-        if: always()   # always upload report, even if tests fail
-        uses: actions/upload-artifact@v4   # updated from v3 to v4
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: playwright-report
           path: playwright-report/
-          retention-days: 14   # optional: keep artifacts for 14 days
+          retention-days: 14
