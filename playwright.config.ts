@@ -8,7 +8,7 @@ dotenv.config({
 
 export default defineConfig({
   // globalSetup: require.resolve('./global-setup.ts'),
-  testDir: './tests',
+  testDir: './tests/ui',
   timeout: 6 * 5 * 1000,
   expect: {
     timeout: 20000
@@ -19,7 +19,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    headless: false,
+    headless: process.env.CI ? true : false,  //dynamic headless based on env
     screenshot: 'on',
     video: 'retain-on-failure',
     actionTimeout: 20000,
