@@ -8,14 +8,14 @@ dotenv.config({
 
 export default defineConfig({
   // globalSetup: require.resolve('./global-setup.ts'),
-  testDir: './tests/ui',
+  testDir: './tests',
   timeout: 6 * 5 * 1000,
   expect: {
     timeout: 20000
   },
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
+  retries: process.env.CI ? 2 : 1,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {

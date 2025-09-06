@@ -7,7 +7,8 @@
     "homePageWithReport": "npx playwright test tests/ui/HomePageVerification.test.ts --reporter=line,allure-playwright",
     "generateReport": "allure generate ./allure-results --clean",
     "openReport": "allure open ./allure-report",
-    "showReport": "npx playwright show-report"
+    "showReport": "npx playwright show-report",
+    "azureDevops": "npx playwright test --config=playwright.service.config.ts --workers=20"
   },
   "keywords": [],
   "author": "",

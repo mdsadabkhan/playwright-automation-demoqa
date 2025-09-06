@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CSS Locators Practice</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { background: #f4f4f4; padding: 20px; margin-bottom: 20px; }
+        .nav-item { display: inline-block; margin-right: 15px; }
+        .form-section { border: 1px solid #ddd; padding: 20px; margin: 20px 0; }
+        .input-group { margin: 15px 0; }
+        .btn { padding: 10px 20px; margin: 5px; border: none; cursor: pointer; }
+        .btn-primary { background: #007bff; color: white; }
+        .btn-secondary { background: #6c757d; color: white; }
+        .btn-danger { background: #dc3545; color: white; }
+        .table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .table th, .table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .table th { background: #f2f2f2; }
+        .card { border: 1px solid #ddd; margin: 10px; padding: 15px; border-radius: 5px; }
+        .card-header { font-weight: bold; margin-bottom: 10px; }
+        .list-item { padding: 5px 0; }
+        .highlight { background: yellow; }
+        .hidden { display: none; }
+        .flex-container { display: flex; gap: 20px; margin: 20px 0; }
+        .sidebar { flex: 1; background: #f8f9fa; padding: 15px; }
+        .main-content { flex: 3; }
+        .nested-deep { padding-left: 20px; }
+        .special-attribute { color: purple; }
+        .dynamic-content { background: #e9ecef; padding: 10px; margin: 10px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section with Navigation -->
+        <header class="header" id="main-header" data-testid="page-header">
+            <h1>Advanced CSS Locators Practice</h1>
+            <nav class="navigation" role="navigation">
+                <a href="#forms" class="nav-item primary-nav" id="forms-link" data-section="forms">Forms</a>
+                <a href="#tables" class="nav-item primary-nav" id="tables-link" data-section="tables">Tables</a>
+                <a href="#lists" class="nav-item primary-nav" id="lists-link" data-section="lists">Lists</a>
+                <a href="#cards" class="nav-item secondary-nav" data-section="cards">Cards</a>
+                <a href="#complex" class="nav-item secondary-nav" data-section="complex">Complex</a>
+            </nav>
+        </header>
+
+        <!-- Original Basic Section (keeping your example) -->
+        <section id="basic-section" class="form-section" data-testid="basic-demo">
+            <h3>Basic HTML structure</h3>
+            <div>
+                <a href="https://demoqa.com/" id="launchUrl" data-testid="landing_page" class="new-web-page">Practice Website</a>
+            </div>
+        </section>
+
+        <!-- Advanced Forms Section -->
+        <section id="forms" class="form-section" data-testid="forms-section">
+            <h2 class="section-title">Advanced Forms</h2>
+            
+            <form id="user-form" class="complex-form" data-form-type="registration" novalidate>
+                <div class="input-group">
+                    <label for="username" class="form-label required">Username:</label>
+                    <input type="text" id="username" name="username" class="form-input text-input" 
+                           placeholder="Enter username" data-validation="required" aria-required="true">
+                </div>
+
+                <div class="input-group">
+                    <label for="email" class="form-label required">Email:</label>
+                    <input type="email" id="email" name="email" class="form-input email-input" 
+                           placeholder="user@example.com" data-validation="email" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="password" class="form-label">Password:</label>
+                    <input type="password" id="password" name="password" class="form-input password-input" 
+                           data-strength="weak" autocomplete="new-password">
+                </div>
+
+                <div class="input-group">
+                    <label class="form-label">Gender:</label>
+                    <input type="radio" id="male" name="gender" value="male" class="radio-input">
+                    <label for="male" class="radio-label">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" class="radio-input">
+                    <label for="female" class="radio-label">Female</label>
+                    <input type="radio" id="other" name="gender" value="other" class="radio-input">
+                    <label for="other" class="radio-label">Other</label>
+                </div>
+
+                <div class="input-group">
+                    <label for="country" class="form-label">Country:</label>
+                    <select id="country" name="country" class="form-select dropdown-input" data-placeholder="Select Country">
+                        <option value="">Select Country</option>
+                        <option value="us" data-code="US">United States</option>
+                        <option value="uk" data-code="UK">United Kingdom</option>
+                        <option value="ca" data-code="CA">Canada</option>
+                        <option value="au" data-code="AU">Australia</option>
+                    </select>
+                </div>
+
+                <div class="input-group">
+                    <input type="checkbox" id="terms" name="terms" class="checkbox-input" data-required="true">
+                    <label for="terms" class="checkbox-label">I agree to the <a href="#terms" class="link-text">terms and conditions</a></label>
+                </div>
+
+                <div class="input-group">
+                    <input type="checkbox" id="newsletter" name="newsletter" class="checkbox-input">
+                    <label for="newsletter" class="checkbox-label">Subscribe to newsletter</label>
+                </div>
+
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary" id="submit-btn" data-action="submit">Submit Form</button>
+                    <button type="reset" class="btn btn-secondary" id="reset-btn" data-action="reset">Reset</button>
+                    <button type="button" class="btn btn-danger" id="cancel-btn" data-action="cancel">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Complex Tables Section -->
+        <section id="tables" class="form-section" data-testid="tables-section">
+            <h2 class="section-title">Complex Tables</h2>
+            
+            <table class="table data-table" id="users-table" data-sortable="true">
+                <thead class="table-header">
+                    <tr class="header-row">
+                        <th class="col-id sortable" data-column="id">ID</th>
+                        <th class="col-name sortable" data-column="name">Name</th>
+                        <th class="col-email sortable" data-column="email">Email</th>
+                        <th class="col-status sortable" data-column="status">Status</th>
+                        <th class="col-actions" data-column="actions">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <tr class="data-row user-row active" data-user-id="1" data-status="active">
+                        <td class="cell-id">1</td>
+                        <td class="cell-name" data-original="John Doe">John Doe</td>
+                        <td class="cell-email" data-validated="true">john@example.com</td>
+                        <td class="cell-status active-status" data-status="active">Active</td>
+                        <td class="cell-actions">
+                            <button class="btn-small edit-btn" data-action="edit" data-user-id="1">Edit</button>
+                            <button class="btn-small delete-btn" data-action="delete" data-user-id="1">Delete</button>
+                        </td>
+                    </tr>
+                    <tr class="data-row user-row inactive" data-user-id="2" data-status="inactive">
+                        <td class="cell-id">2</td>
+                        <td class="cell-name" data-original="Jane Smith">Jane Smith</td>
+                        <td class="cell-email" data-validated="false">jane@example.com</td>
+                        <td class="cell-status inactive-status" data-status="inactive">Inactive</td>
+                        <td class="cell-actions">
+                            <button class="btn-small edit-btn" data-action="edit" data-user-id="2">Edit</button>
+                            <button class="btn-small activate-btn" data-action="activate" data-user-id="2">Activate</button>
+                        </td>
+                    </tr>
+                    <tr class="data-row user-row pending" data-user-id="3" data-status="pending">
+                        <td class="cell-id">3</td>
+                        <td class="cell-name" data-original="Bob Johnson">Bob Johnson</td>
+                        <td class="cell-email" data-validated="true">bob@example.com</td>
+                        <td class="cell-status pending-status" data-status="pending">Pending</td>
+                        <td class="cell-actions">
+                            <button class="btn-small approve-btn" data-action="approve" data-user-id="3">Approve</button>
+                            <button class="btn-small reject-btn" data-action="reject" data-user-id="3">Reject</button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot class="table-footer">
+                    <tr class="footer-row">
+                        <td colspan="5" class="footer-cell">
+                            <span class="record-count">Total: 3 users</span>
+                            <span class="pagination">
+                                <a href="#" class="page-link prev" data-page="prev">Previous</a>
+                                <span class="page-numbers">
+                                    <a href="#" class="page-link active" data-page="1">1</a>
+                                    <a href="#" class="page-link" data-page="2">2</a>
+                                    <a href="#" class="page-link" data-page="3">3</a>
+                                </span>
+                                <a href="#" class="page-link next" data-page="next">Next</a>
+                            </span>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <!-- Nested Lists Section -->
+        <section id="lists" class="form-section" data-testid="lists-section">
+            <h2 class="section-title">Complex Nested Lists</h2>
+            
+            <ul class="main-list" id="navigation-menu" data-menu-type="vertical">
+                <li class="list-item top-level" data-level="1">
+                    <a href="#home" class="menu-link active" data-target="home">Home</a>
+                </li>
+                <li class="list-item top-level has-children" data-level="1">
+                    <a href="#products" class="menu-link" data-target="products">Products</a>
+                    <ul class="sub-list" data-parent="products">
+                        <li class="list-item sub-level" data-level="2">
+                            <a href="#laptops" class="menu-link sub-link" data-target="laptops" data-category="electronics">Laptops</a>
+                        </li>
+                        <li class="list-item sub-level has-children" data-level="2">
+                            <a href="#phones" class="menu-link sub-link" data-target="phones" data-category="electronics">Phones</a>
+                            <ul class="sub-list nested-deep" data-parent="phones">
+                                <li class="list-item deep-level" data-level="3">
+                                    <a href="#android" class="menu-link deep-link" data-target="android" data-os="android">Android</a>
+                                </li>
+                                <li class="list-item deep-level" data-level="3">
+                                    <a href="#ios" class="menu-link deep-link" data-target="ios" data-os="ios">iPhone</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="list-item sub-level" data-level="2">
+                            <a href="#tablets" class="menu-link sub-link" data-target="tablets" data-category="electronics">Tablets</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-item top-level" data-level="1">
+                    <a href="#services" class="menu-link" data-target="services">Services</a>
+                    <ul class="sub-list" data-parent="services">
+                        <li class="list-item sub-level" data-level="2">
+                            <a href="#support" class="menu-link sub-link priority-high" data-target="support" data-priority="high">Technical Support</a>
+                        </li>
+                        <li class="list-item sub-level" data-level="2">
+                            <a href="#consultation" class="menu-link sub-link priority-medium" data-target="consultation" data-priority="medium">Consultation</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="list-item top-level" data-level="1">
+                    <a href="#contact" class="menu-link" data-target="contact">Contact</a>
+                </li>
+            </ul>
+
+            <ol class="ordered-list" id="instructions-list" data-type="steps">
+                <li class="instruction-item step-item" data-step="1" data-difficulty="easy">
+                    <span class="step-title">Basic Setup</span>
+                    <p class="step-description">Install the required software</p>
+                </li>
+                <li class="instruction-item step-item" data-step="2" data-difficulty="medium">
+                    <span class="step-title">Configuration</span>
+                    <p class="step-description">Configure your settings</p>
+                    <ol class="sub-steps" data-parent-step="2">
+                        <li class="sub-step-item" data-substep="2.1">Open settings panel</li>
+                        <li class="sub-step-item" data-substep="2.2">Select preferences</li>
+                        <li class="sub-step-item" data-substep="2.3">Save configuration</li>
+                    </ol>
+                </li>
+                <li class="instruction-item step-item" data-step="3" data-difficulty="hard">
+                    <span class="step-title">Advanced Setup</span>
+                    <p class="step-description">Complete advanced configuration</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Cards and Complex Structures -->
+        <section id="cards" class="form-section" data-testid="cards-section">
+            <h2 class="section-title">Card Components & Complex Structures</h2>
+            
+            <div class="flex-container">
+                <div class="sidebar">
+                    <div class="widget" id="search-widget" data-widget-type="search">
+                        <h4 class="widget-title">Search</h4>
+                        <input type="text" class="search-input widget-input" placeholder="Search products..." data-search-type="product">
+                        <button class="search-btn widget-btn" data-action="search">Search</button>
+                    </div>
+                    
+                    <div class="widget" id="filter-widget" data-widget-type="filter">
+                        <h4 class="widget-title">Filters</h4>
+                        <div class="filter-group">
+                            <label class="filter-label">Price Range</label>
+                            <input type="range" class="range-input" min="0" max="1000" value="500" data-filter="price">
+                        </div>
+                        <div class="filter-group">
+                            <label class="filter-label">Category</label>
+                            <select class="filter-select" data-filter="category">
+                                <option value="">All Categories</option>
+                                <option value="electronics">Electronics</option>
+                                <option value="clothing">Clothing</option>
+                                <option value="books">Books</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main-content">
+                    <div class="cards-container" id="products-grid" data-layout="grid">
+                        <div class="card product-card featured" data-product-id="101" data-category="electronics" data-featured="true">
+                            <div class="card-header">
+                                <h3 class="card-title product-title">Gaming Laptop</h3>
+                                <span class="card-badge featured-badge" data-badge="featured">Featured</span>
+                            </div>
+                            <div class="card-body">
+                                <img src="/api/placeholder/200/150" alt="Gaming Laptop" class="product-image card-image" data-lazy="true">
+                                <p class="product-description card-text">High-performance gaming laptop with RTX graphics</p>
+                                <div class="product-price">
+                                    <span class="price current-price" data-currency="USD">$1299.99</span>
+                                    <span class="price original-price strikethrough" data-currency="USD">$1499.99</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary add-to-cart" data-action="add-to-cart" data-product-id="101">Add to Cart</button>
+                                <button class="btn btn-secondary wishlist-btn" data-action="wishlist" data-product-id="101">♥</button>
+                            </div>
+                        </div>
+
+                        <div class="card product-card" data-product-id="102" data-category="electronics" data-featured="false">
+                            <div class="card-header">
+                                <h3 class="card-title product-title">Wireless Headphones</h3>
+                                <span class="card-badge sale-badge" data-badge="sale">On Sale</span>
+                            </div>
+                            <div class="card-body">
+                                <img src="/api/placeholder/200/150" alt="Wireless Headphones" class="product-image card-image" data-lazy="true">
+                                <p class="product-description card-text">Premium wireless headphones with noise cancellation</p>
+                                <div class="product-price">
+                                    <span class="price current-price" data-currency="USD">$199.99</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary add-to-cart" data-action="add-to-cart" data-product-id="102">Add to Cart</button>
+                                <button class="btn btn-secondary wishlist-btn" data-action="wishlist" data-product-id="102">♥</button>
+                            </div>
+                        </div>
+
+                        <div class="card product-card out-of-stock" data-product-id="103" data-category="books" data-featured="false">
+                            <div class="card-header">
+                                <h3 class="card-title product-title">JavaScript Guide</h3>
+                                <span class="card-badge stock-badge" data-badge="out-of-stock">Out of Stock</span>
+                            </div>
+                            <div class="card-body">
+                                <img src="/api/placeholder/200/150" alt="JavaScript Guide" class="product-image card-image grayscale" data-lazy="true">
+                                <p class="product-description card-text">Comprehensive guide to modern JavaScript</p>
+                                <div class="product-price">
+                                    <span class="price current-price" data-currency="USD">$39.99</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary add-to-cart disabled" data-action="add-to-cart" data-product-id="103" disabled>Out of Stock</button>
+                                <button class="btn btn-secondary notify-btn" data-action="notify" data-product-id="103">Notify Me</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Very Complex Section -->
+        <section id="complex" class="form-section" data-testid="complex-section">
+            <h2 class="section-title">Very Complex Elements (Challenge Mode)</h2>
+            
+            <div class="challenge-container" data-complexity="extreme">
+                <div class="dynamic-content" id="dynamic-area" data-loaded="false">
+                    <div class="content-block" data-block-type="header" data-priority="1">
+                        <span class="content-text special-attribute" data-content-id="h1">Dynamic Header Content</span>
+                    </div>
+                    
+                    <div class="content-block" data-block-type="body" data-priority="2">
+                        <div class="nested-container level-1" data-nesting="1">
+                            <div class="nested-container level-2" data-nesting="2">
+                                <div class="nested-container level-3" data-nesting="3">
+                                    <span class="deeply-nested-element" data-depth="3" data-unique="deep-element-001">
+                                        Find me if you can!
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-block" data-block-type="interactive" data-priority="3">
+                        <div class="button-matrix" data-matrix-size="3x3">
+                            <button class="matrix-btn" data-position="0,0" data-state="inactive">A1</button>
+                            <button class="matrix-btn" data-position="0,1" data-state="active">A2</button>
+                            <button class="matrix-btn" data-position="0,2" data-state="inactive">A3</button>
+                            <button class="matrix-btn" data-position="1,0" data-state="inactive">B1</button>
+                            <button class="matrix-btn special-btn" data-position="1,1" data-state="special">B2</button>
+                            <button class="matrix-btn" data-position="1,2" data-state="inactive">B3</button>
+                            <button class="matrix-btn" data-position="2,0" data-state="active">C1</button>
+                            <button class="matrix-btn" data-position="2,1" data-state="inactive">C2</button>
+                            <button class="matrix-btn" data-position="2,2" data-state="inactive">C3</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Elements with same classes but different contexts -->
+                <div class="duplicate-challenge" data-challenge-type="similar-elements">
+                    <div class="section-a">
+                        <button class="action-btn primary">Button A</button>
+                        <input class="form-input" data-section="a" placeholder="Input A">
+                    </div>
+                    <div class="section-b">
+                        <button class="action-btn primary">Button B</button>
+                        <input class="form-input" data-section="b" placeholder="Input B">
+                    </div>
+                    <div class="section-c">
+                        <button class="action-btn secondary">Button C</button>
+                        <input class="form-input" data-section="c" placeholder="Input C">
+                    </div>
+                </div>
+
+                <!-- Hidden elements that become visible -->
+                <div class="visibility-challenge" data-challenge-type="visibility">
+                    <button id="toggle-hidden" class="toggle-btn" data-target="hidden-content">Show Hidden Content</button>
+                    <div id="hidden-content" class="hidden-content hidden" data-visibility="hidden">
+                        <p class="hidden-text" data-revealed="false">This content is initially hidden!</p>
+                        <button class="hidden-btn" data-action="hidden-action">Hidden Button</button>
+                    </div>
+                </div>
+
+                <!-- Pseudo-elements challenge -->
+                <div class="pseudo-challenge" data-challenge-type="pseudo-elements">
+                    <div class="pseudo-container">
+                        <div class="pseudo-item first">First Item</div>
+                        <div class="pseudo-item">Middle Item 1</div>
+                        <div class="pseudo-item">Middle Item 2</div>
+                        <div class="pseudo-item">Middle Item 3</div>
+                        <div class="pseudo-item last">Last Item</div>
+                    </div>
+                    
+                    <div class="nth-child-container">
+                        <span class="nth-item" data-index="1">Item 1</span>
+                        <span class="nth-item" data-index="2">Item 2</span>
+                        <span class="nth-item highlight" data-index="3">Item 3 (Every 3rd)</span>
+                        <span class="nth-item" data-index="4">Item 4</span>
+                        <span class="nth-item" data-index="5">Item 5</span>
+                        <span class="nth-item highlight" data-index="6">Item 6 (Every 3rd)</span>
+                        <span class="nth-item" data-index="7">Item 7</span>
+                        <span class="nth-item" data-index="8">Item 8</span>
+                        <span class="nth-item highlight" data-index="9">Item 9 (Every 3rd)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer with complex navigation -->
+        <footer class="footer-section" id="main-footer" data-testid="page-footer">
+            <div class="footer-content">
+                <div class="footer-column" data-column="links">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about" class="footer-link" data-link-type="internal">About Us</a></li>
+                        <li><a href="#contact" class="footer-link" data-link-type="internal">Contact</a></li>
+                        <li><a href="#privacy" class="footer-link" data-link-type="policy">Privacy Policy</a></li>
+                        <li><a href="#terms" class="footer-link" data-link-type="policy">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column" data-column="social">
+                    <h4 class="footer-title">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" data-platform="facebook" aria-label="Facebook">FB</a>
+                        <a href="#" class="social-link" data-platform="twitter" aria-label="Twitter">TW</a>
+                        <a href="#" class="social-link" data-platform="linkedin" aria-label="LinkedIn">LI</a>
+                        <a href="#" class="social-link" data-platform="instagram" aria-label="Instagram">IG</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright" data-year="2024">&copy; 2024 Advanced CSS Locators Practice. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Add some interactivity for testing dynamic elements
+        document.getElementById('toggle-hidden').addEventListener('click', function() {
+            const hiddenContent = document.getElementById('hidden-content');
+            const hiddenText = document.querySelector('.hidden-text');
+            
+            if (hiddenContent.classList.contains('hidden')) {
+                hiddenContent.classList.remove('hidden');
+                hiddenContent.setAttribute('data-visibility', 'visible');
+                hiddenText.setAttribute('data-revealed', 'true');
+                this.textContent = 'Hide Content';
+            } else {
+                hiddenContent.classList.add('hidden');
+                hiddenContent.setAttribute('data-visibility', 'hidden');
+                hiddenText.setAttribute('data-revealed', 'false');
+                this.textContent = 'Show Hidden Content';
+            }
+        });
+
+        // Matrix button interactions
+        document.querySelectorAll('.matrix-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const currentState = this.getAttribute('data-state');
+                const newState = currentState === 'active' ? 'inactive' : 'active';
+                this.setAttribute('data-state', newState);
+            });
+        });
+
+        // Dynamic content loading simulation
+        setTimeout(() => {
+            const dynamicArea = document.getElementById('dynamic-area');
+            dynamicArea.setAttribute('data-loaded', 'true');
+        }, 1000);
+    </script>
+
+    <!-- CSS Locator Reference (Your Original List + Extensions) -->
+    <!--
+    CSS Locators Reference:
+
+    BASIC LOCATORS:
+    1. tag#id → a#launchUrl
+    2. #id → #launchUrl
+    3. .class → .new-web-page
+    4. tag.class → a.new-web-page
+    5. tag[attribute*='Partial Value'] → a[data-testid*='landing']
+    6. tag[attribute^='Starting Value'] → a[data-testid^='land']
+    7. tag[attribute$='Ending Value'] → a[data-testid$='age']
+    8. tag[attr1='value'][attr2='value'] → a[id="launchUrl"][data-testid="landing_page"]
+    9. tag[attr1='value'],tag[attr2='value'] → a[id="launchUrl"],a[data-testid="landing_page"]
+
+    ADVANCED LOCATORS:
+    1. tag → ul, td, thead, a (collection)
+    2. [attribute] → [class], [href], [id], [placeholder] (collection)
+    3. node1,node2 → a[class],li[class] → a,li
+    4. node1 node2 → thead tbody → #username div (descendant)
+    5. node1>node2 → thead>tbody → #username>div (direct child)
+    6. node1+node2 → #username+div → .class+* (adjacent sibling)
+    7. node1~node2 → .class~div → #username~* (general sibling)
+    8. node1>node2:first-child → .class>div:first-child
+    9. node1>node2:nth-child(n) → .class>div:nth-child(3)
+    10. node1>node2:last-child → .class>div:last-child
+
+    CHALLENGE LOCATORS FOR THIS PAGE:
+    11. :nth-of-type(n) → .nth-item:nth-of-type(3n) (every 3rd)
+    12. :not(selector) → .btn:not(.disabled)
+    13. [attr~='value'] → [class~='featured'] (word match)
+    14. [attr|='value'] → [data-platform|='face'] (starts with word)
+    15. ::first-line, ::first-letter → p::first-line
+    16. :enabled, :disabled → input:enabled, button:disabled
+    17. :checked → input:checked
+    18. :hover, :focus, :active → .btn:hover
+    19. :empty → td:empty
+    20. :contains('text') → *:contains('Find me') (non-standard but useful)
+    21. Multiple class selectors → .card.product-card.featured
+    22. Attribute contains word → [data-badge~='featured']
+    23. Complex combinations → .card[data-featured='true'] .btn:first-of-type
+    24. Deeply nested → .level-1 .level-2 .level-3 [data-depth='3']
+    25. Dynamic attributes → [data-loaded='true'] [data-state='active']
+
+    PRACTICE EXERCISES:
+    - Find the 3rd product card: .product-card:nth-child(3)
+    - Find active user in table: tr[data-status='active']
+    - Find the special matrix button: .matrix-btn[data-state='special']
+    - Find all buttons except disabled: button:not(.disabled)
+    - Find featured product price: .card[data-featured='true'] .current-price
+    - Find deeply nested element: [data-unique='deep-element-001']
+    - Find form inputs by validation: input[data-validation]
+    - Find all social links: [data-platform]
+    - Find elements by multiple attributes: [data-testid][data-section]
+    - Find last navigation item: .nav-item:last-child
+    -->
+</body>
+</html>

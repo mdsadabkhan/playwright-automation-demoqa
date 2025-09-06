@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Advanced CSS Locator Practice</title>
+  <style>
+    /* Minimal styling to visually separate sections */
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 24px; }
+    section { border: 1px dashed #ccc; padding: 16px; margin-bottom: 20px; border-radius: 8px; }
+    h1,h2 { margin: 4px 0 12px 0 }
+    .row { display:flex; gap:16px; }
+    .col { flex:1 }
+    table { width:100%; border-collapse: collapse; }
+    td, th { border:1px solid #ddd; padding:8px }
+    .vis { padding:4px 6px; border-radius:4px }
+  </style>
+</head>
+<body>
+  <h1>Advanced CSS Locators Practice Page</h1>
+  <p>Use this page to practice simple and very advanced CSS selectors. It intentionally contains many similar tags, repeated classes, nested structures, and tricky attribute cases.</p>
+
+  <!-- Preserve the original small sample link the user included -->
+  <section id="starter">
+    <h2>Starter / Existing snippet</h2>
+    <div>
+      <a href="https://demoqa.com/" id="launchUrl" data-testid="landing_page" class="new-web-page">Practice Website</a>
+    </div>
+  </section>
+
+  <!-- Complex attributes & attribute selector practice -->
+  <section id="attributes">
+    <h2>Attribute selectors</h2>
+    <div class="row">
+      <div class="col">
+        <input id="email" type="email" name="user[email]" placeholder="user@example.com" aria-label="email input" data-track="signup-step1" required />
+        <input id="phone" type="tel" name="user[phone]" placeholder="+91-XXXXXXXXXX" data-phone-type="mobile" />
+        <input id="code" type="text" name="promo-code" value="SAVE20" data-ref="promo.SAVE20" />
+        <input id="empty-attr" type="text" placeholder="has-placeholder" data-empty />
+
+        <!-- toggles for :checked / :not / :disabled -->
+        <div class="toggles">
+          <label><input type="checkbox" name="prefs" value="a" checked /> Option A</label>
+          <label><input type="checkbox" name="prefs" value="b" disabled /> Option B (disabled)</label>
+          <label><input type="radio" name="gender" value="m" /> Male</label>
+          <label><input type="radio" name="gender" value="f" checked /> Female</label>
+        </div>
+
+        <select id="country" name="country" data-country-code="IN-AP">
+          <option value="">Select</option>
+          <option value="in">India</option>
+          <option value="us">United States</option>
+          <option value="de" lang="de">Deutschland</option>
+        </select>
+
+        <textarea id="bio" name="bio" maxlength="200" placeholder="Tell us about yourself"></textarea>
+
+      </div>
+
+      <div class="col">
+        <button class="btn primary large" data-action="submit" aria-pressed="false">Submit</button>
+        <button class="btn secondary" data-action="cancel">Cancel</button>
+        <a class="btn link small" href="#" data-ga="nav_link_1">Go back</a>
+
+        <!-- attribute with spaces and dash segments -->
+        <div data-test-id="section-1-hero" data-role="hero.section">Hero Section</div>
+        <div data-test-id="section-1-footer" data-role="footer.section">Footer Section</div>
+
+        <!-- attributes for ^=, $=, *=, ~=, |= tests -->
+        <div id="attrib-examples">
+          <span data-sku="SKU-12345-XYZ">SKU item</span>
+          <span data-sku="SKU-54321-ABC">SKU another</span>
+          <span data-sku="PROD-99999">Other product</span>
+          <a href="/files/image-hero.png" title="hero-image">Image Hero</a>
+          <a href="/files/docs/user-manual.pdf" title="manual">User Manual</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nested structure for descendant, child, sibling selectors & :nth-child -->
+  <section id="nesting">
+    <h2>Nesting, child, sibling & nth-child</h2>
+    <div id="cards">
+      <div class="card featured" data-pos="1">
+        <h3 class="title">Featured card 1</h3>
+        <p class="desc">First featured card.</p>
+      </div>
+      <div class="card" data-pos="2">
+        <h3 class="title">Card 2</h3>
+        <p class="desc">Second card.</p>
+      </div>
+      <div class="card" data-pos="3">
+        <h3 class="title special">Card 3 (special)</h3>
+        <p class="desc">Third card.</p>
+      </div>
+      <div class="card group last" data-pos="4">
+        <h3 class="title">Card 4</h3>
+        <p class="desc">Fourth card (last)</p>
+      </div>
+    </div>
+
+    <ul id="menu">
+      <li class="item"><a href="#home">Home</a></li>
+      <li class="item active"><a href="#products">Products</a></li>
+      <li class="item"><a href="#pricing">Pricing</a></li>
+      <li class="item"><a href="#about">About</a></li>
+      <li class="item special"><a href="#contact">Contact</a></li>
+    </ul>
+
+    <!-- sibling combinators: + and ~ -->
+    <div class="siblings">
+      <h4 id="sibling-1">Sibling 1</h4>
+      <p>Paragraph immediately after h4 (match via #sibling-1 + p )</p>
+      <span>First span after p</span>
+      <span class="note">Second span (match via ~ selector)</span>
+      <div class="extra">A following div</div>
+    </div>
+
+    <!-- complex nth-child / nth-of-type cases -->
+    <div class="matrix">
+      <div class="row">
+        <div>R1C1</div>
+        <div>R1C2</div>
+        <div>R1C3</div>
+      </div>
+      <div class="row special-row">
+        <div>R2C1</div>
+        <div>R2C2</div>
+        <div>R2C3</div>
+      </div>
+      <div class="row">
+        <div>R3C1</div>
+        <div>R3C2</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table with thead, tbody, tfoot - good for thead tbody selectors and :first-child -->
+  <section id="tables">
+    <h2>Table structures</h2>
+    <table id="pricing-table">
+      <caption>Pricing Plans</caption>
+      <colgroup>
+        <col class="col-plan" />
+        <col class="col-price" />
+        <col class="col-bonus" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Plan</th>
+          <th>Price</th>
+          <th>Bonus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="plan starter">
+          <td class="plan-name">Starter</td>
+          <td class="plan-price">Free</td>
+          <td class="plan-bonus">—</td>
+        </tr>
+        <tr class="plan pro">
+          <td class="plan-name special">Pro</td>
+          <td class="plan-price">₹499</td>
+          <td class="plan-bonus">Extra support</td>
+        </tr>
+        <tr class="plan enterprise">
+          <td class="plan-name">Enterprise</td>
+          <td class="plan-price">Custom</td>
+          <td class="plan-bonus">Account manager</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3">All prices are indicative</td>
+        </tr>
+      </tfoot>
+    </table>
+  </section>
+
+  <!-- Forms with labels paired by 'for', :required, :placeholder, name attrs that include brackets -->
+  <section id="form-complex">
+    <h2>Form: Labels, for, complex names</h2>
+    <form id="signup-form">
+      <fieldset>
+        <legend>Account</legend>
+        <label for="username">Username</label>
+        <div id="username-wrap">
+          <input id="username" name="account[username]" placeholder="choose a username" class="input login" />
+          <small class="hint">No spaces allowed</small>
+        </div>
+
+        <label for="password">Password</label>
+        <input id="password" name="account[password]" type="password" minlength="8" />
+
+        <label class="inline"><input type="checkbox" id="tos" name="tos" required /> Accept terms</label>
+
+        <button type="submit" class="btn primary" data-role="form-submit">Create account</button>
+      </fieldset>
+    </form>
+
+    <!-- :not() examples and complex selectors -->
+    <div class="list-group">
+      <p class="lead">Available items:</p>
+      <div class="items">
+        <div class="item available">Item A</div>
+        <div class="item sold">Item B (sold)</div>
+        <div class="item available highlight">Item C</div>
+        <div class="item unknown">Item D</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SVG element to practice selecting non-HTML tags -->
+  <section id="svg-section">
+    <h2>SVG (select using svg, g, path)</h2>
+    <svg width="200" height="80" aria-label="logo-svg">
+      <g id="logo-group">
+        <rect width="200" height="80" fill="#eee"></rect>
+        <circle cx="40" cy="40" r="26" class="logo-circle" data-logo="main" />
+        <path d="M80 20 L120 60" stroke="#333" stroke-width="4" class="logo-path" />
+      </g>
+    </svg>
+  </section>
+
+  <!-- Complex nested list structures for :nth-of-type, :first-of-type, :only-child -->
+  <section id="lists">
+    <h2>Lists & complex :nth-of-type</h2>
+    <ol id="steps">
+      <li class="step">Step 1</li>
+      <li class="step important">Step 2 (important)</li>
+      <li class="step">Step 3</li>
+      <li class="step">Step 4</li>
+    </ol>
+
+    <div class="faq">
+      <h3>FAQ</h3>
+      <dl>
+        <dt>Question 1</dt>
+        <dd>Answer 1</dd>
+        <dt>Question 2</dt>
+        <dd>Answer 2</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Hidden & visually-hidden elements and contenteditable -->
+  <section id="hidden">
+    <h2>Hidden, contenteditable & tricky inputs</h2>
+    <div hidden id="secret">This is hidden via HTML attribute.</div>
+    <div style="display:none" id="gone">This is display:none</div>
+    <div class="visually-hidden" aria-hidden="true">Visually hidden</div>
+    <div contenteditable="true" id="editable">Edit this text — contenteditable element (practice selecting it)</div>
+  </section>
+
+  <!-- Complex class combinations, multiple classes & matching via .class1.class2 -->
+  <section id="multi-classes">
+    <h2>Multiple classes & complex class matches</h2>
+    <div class="badge important large">Important Badge</div>
+    <div class="badge small">Small Badge</div>
+    <div class="badge important small special">Special small important badge</div>
+  </section>
+
+  <!-- ARIA roles & attributes for selecting by role or aria attributes -->
+  <section id="aria">
+    <h2>ARIA & role attributes</h2>
+    <nav role="navigation" aria-label="main nav">
+      <ul>
+        <li><a href="#home" role="link">Home</a></li>
+        <li><a href="#features">Features</a></li>
+      </ul>
+    </nav>
+
+    <div role="dialog" aria-modal="true" id="modal">
+      <h3>Modal Title</h3>
+      <p>Modal content here</p>
+      <button class="close" aria-label="Close dialog">X</button>
+    </div>
+  </section>
+
+  <!-- Complex selectors to practice: ~=, |=, attribute selectors with multiple attr chaining -->
+  <section id="advanced-attr">
+    <h2>Advanced attribute selector examples</h2>
+    <div>
+      <p data-tags="red blue large">Has multiple tags (space separated)</p>
+      <p data-pk="en-US">Dash-separated language code (use |= selector)</p>
+      <p data-info="starts-with-hello-world">Starts with 'starts-'</p>
+      <p data-info-end="endsWithSuffix">Ends with 'Suffix'</p>
+    </div>
+  </section>
+
+  <!-- Final section: list the CSS locators original text - DO NOT REMOVE the part user asked to keep -->
+  <section id="css-locators-note">
+    <h2>CSS Loctors</h2>
+<pre>
+
+<!--
+
+1. tag#id. -- a#launchUrl
+
+2. #id. -- #launchUrl
+
+3. .class --  .new-web-page
+
+4. tag.class -- a.new-web-page
+
+5. tag[attribute*='Partial Value']  - Using partial value of an attribute  -- a[data-testid*='landing']
+
+6. tag[attribute^='Starting Value'] - using starting value of attribute  -- a[data-testid^='land']
+
+7. tag[attribute$='Ending Value'] - using ending value of attribute   -- a[data-testid$='age']
+
+8. tag[attr1='value'][attr2='value']  - using two or more attribute(AND) values together  -- a[id="launchUrl"][data-testid="landing_page"]
+
+9. tag[attr1='value'],[attr2='value']  - using two or more attribute(OR) values to choose any one  -- a[id="launchUrl"],a[data-testid="landing_page"]
+
+
+Advance CSS locators
+
+1. tag  -- also a CSS, this will find the collection of element -- like ul, td, thead, a
+
+2. attrubute -- also a CSS, this will find the collection of element -- like [class], [href], [id], [placeHolder]
+
+3. node1,Node2 -- it maches all the node1 and node2 elements -- a[class],li[thead]   -- a,li
+
+4. node1 node2 -- it will give all the node2 elements avialable in node1 (like node1 is parent and node2 is descendent) -- thead tbody -- #username div
+
+5. node1>node2 -- it will give all the node2 elemants which is child of node1(opp. of above) -- thead>tbody -- #username>div -- .class*
+
+6. node1+node2 -- it will matches sibling of node2 immediately after node1 , i.e: first sibling  -- #username+div -- .class+*
+
+7. node1~node2 -- it will matches all sibling of node2  after node1 , i.e: all sibling  -- .class~div -- #username~*
+
+8. node1>node2:first-child -- it will pick the first out of all sub-child of node2 -- .class>div:first-child
+
+9. node1>node2:nth-child(n) -- it will pick the nth out of all sub-child of node2 -- .class>div:nth-child(3) -- td.class>*:nth-child(n)
+
+10. node1>node2:last-child -- it will pick the last out of all sub-child of node2 -- .class>div:last-child -- #username~*:last-child
+
+11. -->
+
+</pre>
+  </section>
+
+  <footer>
+    <p>Page generated for practicing complex CSS locators. Add or modify elements as you like to create custom challenges.</p>
+  </footer>
+</body>
+</html>

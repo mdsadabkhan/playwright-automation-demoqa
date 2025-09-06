@@ -210,7 +210,7 @@ class Utils {
         if (waitForSelector) {
             await this.page.waitForSelector(waitForSelector)
         }
-        const option = this.page.locator(`span:has-text("${optionText}")`);
+        const option = this.page.locator(`text="${optionText}")`);
         await option.click();
     }
     async selectValueFromDropdown(dropdownSelector: string, optionText: string, waitForSelector?: string){

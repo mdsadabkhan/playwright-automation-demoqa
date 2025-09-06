@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>  
+    <body>
+    <h1>Welcome to the Basic Page</h1>
+    <h3>Basic HTML structure</h3>
+    <div>
+        <a href="https://demoqa.com/" id="launchUrl" data-testid="landing_page" class="new-web-page" >Practice Website</a>
+    </div>
+    </body>
+</html>
+
+<!-- -- CSS Loctors
+
+1. tag#id. -- a#launchUrl
+2. #id. -- #launchUrl
+3. .class --  .new-web-page
+4. tag.class -- a.new-web-page
+5. tag[attribute*='Partial Value']  - Using partial value of an attribute  -- a[data-testid*='landing']
+6. tag[attribute^='Starting Value'] - using starting value of attribute  -- a[data-testid^='land']
+7. tag[attribute$='Ending Value'] - using ending value of attribute   -- a[data-testid$='age']
+8. tag[attr1='value'][attr2='value']  - using two or more attribute(AND) values together  -- a[id="launchUrl"][data-testid="landing_page"]
+9. tag[attr1='value'],[attr2='value']  - using two or more attribute(OR) values to choose any one  -- a[id="launchUrl"],a[data-testid="landing_page"]
+
+Advance CSS locators
+1. tag  -- also a CSS, this will find the collection of element -- like ul, td, thead, a
+2. attrubute -- also a CSS, this will find the collection of element -- like [class], [href], [id], [placeHolder]
+3. node1,Node2 -- it maches all the node1 and node2 elements -- a[class],li[thead]   -- a,li
+4. node1 node2 -- it will give all the node2 elements avialable in node1 (like node1 is parent and node2 is descendent) -- thead tbody -- #username div
+5. node1>node2 -- it will give all the node2 elemants which is child of node1(opp. of above) -- thead>tbody -- #username>div -- .class*
+6. node1+node2 -- it will matches sibling of node2 immediately after node1 , i.e: first sibling  -- #username+div -- .class+*
+7. node1~node2 -- it will matches all sibling of node2  after node1 , i.e: all sibling  -- .class~div -- #username~*
+8. node1>node2:first-child -- it will pick the first out of all sub-child of node2 -- .class>div:first-child
+9. node1>node2:nth-child(n) -- it will pick the nth out of all sub-child of node2 -- .class>div:nth-child(3) -- td.class>*:nth-child(n)
+10. node1>node2:last-child -- it will pick the last out of all sub-child of node2 -- .class>div:last-child -- #username~*:last-child
+11.  -->
