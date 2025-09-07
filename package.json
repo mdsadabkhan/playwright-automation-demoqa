@@ -8,7 +8,8 @@
     "generateReport": "allure generate ./allure-results --clean",
     "openReport": "allure open ./allure-report",
     "showReport": "npx playwright show-report",
-    "azureDevops": "npx playwright test --config=playwright.service.config.ts --workers=20"
+    "azureDevops": "npx playwright test --config=playwright.service.config.ts --workers=20",
+    "E2E": "npx playwright test --grep 'E2E'"
   },
   "keywords": [],
   "author": "",

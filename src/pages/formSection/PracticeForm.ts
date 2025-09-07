@@ -1,3 +1,4 @@
+import test from "@playwright/test"
 import Utils from "../../../app_common/utils/Utils"
 
 class PracticeForm extends Utils {
@@ -16,7 +17,14 @@ class PracticeForm extends Utils {
     pictureUploadInput: string
     addressInput: string
     stateDropdown: string
+    stateAsNCR: string
+    stateAsUP: string
+    stateAsHaryana: string
+    stateAsRajasthan: string
     cityDropdown: string
+    cityAsDelhi: string
+    cityAsGurgaon: string
+    cityAsNoida: string
     submitButton: string
 
     constructor(page: any) {
@@ -27,14 +35,21 @@ class PracticeForm extends Utils {
         this.emailInput = '#userEmail'
         this.mobileInput = '#userNumber'
         this.dateOfBirthInput = '#dateOfBirthInput'
-        this.subjectsInput = '#subjectsInput'
+        this.subjectsInput = 'div#subjectsContainer'
         this.hobbiesAsSports = '#hobbies-checkbox-1'  
         this.hobbiesAsReading = '#hobbies-checkbox-2'
         this.hobbiesAsMusic = '#hobbies-checkbox-3'  
         this.pictureUploadInput = '#uploadPicture'
         this.addressInput = '#currentAddress'
         this.stateDropdown = '#state'
+        this.stateAsNCR= '#react-select-3-option-0'
+        this.stateAsHaryana= '#react-select-3-option-2'
+        this.stateAsUP= '#react-select-3-option-1'
+        this.stateAsRajasthan='#react-select-3-option-3'
         this.cityDropdown = '#city'
+        this.cityAsDelhi='#react-select-4-option-0'
+        this.cityAsGurgaon='#react-select-4-option-1'
+        this.cityAsNoida='#react-select-4-option-2'
         this.submitButton = '#submit'
     }
     async fillFirstName(firstName: string) {
@@ -55,11 +70,8 @@ class PracticeForm extends Utils {
     async selectDateOfBirthFromCalender(dob: string) {
         await this.selectDateFromCalendar(this.dateOfBirthInput, dob)
     }
-    async fillSubjects(...subjects: string[]) {
-        for (const subject of subjects) {
-            await this.enterText(this.subjectsInput, subject)
-            await this.page.selectOption(this.subjectsInput, { label: subject })
-        }
+    async selectSubjects(...subjects: string[]): Promise<void> {
+        await this.selectAutocompleteValues(this.subjectsInput, ...subjects)
     }
     async selectHobbiesAs(hobby: string) {
         await this.page.getByText(hobby).click()
@@ -70,11 +82,33 @@ class PracticeForm extends Utils {
     async fillAddress(address: string) {
         await this.enterText(this.addressInput, address)
     }
-    async selectState(state: string) {
-        await this.selectOptionFromDropdown(this.stateDropdown, state) 
+    async selectStateAsUp() {
+        await this.clickOn(this.stateDropdown)
+        await this.clickOn(this.stateAsUP)
     }
-    async selectCity(city: string) {
-        await this.selectOptionFromDropdown(this.cityDropdown, city)
+    async selectStateAsHaryana() {
+        await this.clickOn(this.stateDropdown)
+        await this.clickOn(this.stateAsHaryana)
+    }
+    async selectStateAsNCR() {
+        await this.clickOn(this.stateDropdown)
+        await this.clickOn(this.stateAsNCR)
+    }
+    async selectStateAsRajasthan() {
+        await this.clickOn(this.stateDropdown)
+        await this.clickOn(this.stateAsRajasthan)
+    }
+    async selectCityAsDelhi() {
+        await this.clickOn(this.cityDropdown)
+        await this.clickOn(this.cityAsDelhi)
+    }  
+    async selectCityAsGurgaon() {
+        await this.clickOn(this.cityDropdown)
+        await this.clickOn(this.cityAsGurgaon)
+    }  
+    async selectCityAsNoida() {
+        await this.clickOn(this.cityDropdown)
+        await this.clickOn(this.cityAsNoida)
     }  
     async clickOnSubmitButton() {
         await this.clickOn(this.submitButton)

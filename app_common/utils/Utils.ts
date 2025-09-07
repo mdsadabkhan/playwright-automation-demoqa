@@ -41,6 +41,13 @@ class Utils {
     async enterText(selector: string, text: string) {
         return await this.page.fill(selector, text);
     }
+    async selectAutocompleteValues(containerSelector: string, ...values: string[]): Promise<void> {
+        const inputField = this.page.locator(containerSelector).locator('input');
+        for (const value of values) {
+            await inputField.pressSequentially(value, { delay: 100 });
+            await inputField.press('Enter');
+        }
+    }
     async extractText(selector: string) {
         const text = await this.page.textContent(selector);
         return text;

@@ -17,7 +17,7 @@ class HomePage extends Utils{
         this.page = page
         this.url = String(ENV.URL)
         this.elementsSection= 'div.category-cards>div:nth-of-type(1)'
-        this.fromsSection= 'div.category-cards>div:nth-of-type(2)'
+        this.fromsSection= 'div.category-cards>*:nth-child(2)'
         this.alertsFramesAndWindowsSection='div.category-cards>div:nth-of-type(3)'
         this.widgetsSection='div.category-cards>div:nth-of-type(4)'
         this.interactionSection='div.category-cards>div:nth-of-type(5)'
