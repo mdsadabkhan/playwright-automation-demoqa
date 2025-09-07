@@ -14,7 +14,7 @@ import BrockenLinksImage from '../../src/pages/elementSection/BrockenLinksImage'
 import UploadAndDownloadSideTab from '../../src/pages/elementSection/UploadAndDownloadSideTab'
 import DynamicPropertiesTab from '../../src/pages/elementSection/DynamicPropertiesTab'
 import FormsTab from '../../src/pages/formSection/FormsTab'
-import PracticeForm from '../../src/pages/formSection/practiceForm'
+import PracticeForm from '../../src/pages/formSection/PracticeForm'
 
 type TestFixture = {
     buttonsPage: ButtonsPage
