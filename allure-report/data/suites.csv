@@ -1,2 +1,5 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","25804","To Verify all the section of DEMO page","chromium","Sun Jul 20 19:38:28 IST 2025","passed","Sun Jul 20 19:38:54 IST 2025","","ui/HomePageVerification.test.ts","",""
+"","25010","To Verify all the section of from Elements section of the page","chromium","Tue Aug 26 21:34:21 IST 2025","passed","Tue Aug 26 21:34:46 IST 2025","","HomePageVerification.test.ts","",""
+"","26491","To Verify all the section of DEMO page","chromium","Sun Jul 20 19:42:32 IST 2025","passed","Sun Jul 20 19:42:59 IST 2025","","ui/HomePageVerification.test.ts","",""
+"","42818","@E2E To Verify all the section of from Elements section of the page","chromium","Mon Oct 13 18:56:26 IST 2025","failed","Mon Oct 13 18:57:09 IST 2025","","ui/HomePageVerification.test.ts","",""
+"","31229","@E2E To Verify all the section of from Elements section of the page","chromium","Mon Oct 13 19:12:54 IST 2025","passed","Mon Oct 13 19:13:25 IST 2025","","HomePageVerification.test.ts","",""

@@ -1,3 +1,12 @@
+async function globalSetup() {
+  console.log("Global setup: Starting the test suite...");
+  // You can set environment variables, clean folders, seed DB, etc.
+}
+
+export default globalSetup;
+
+
+
 //Test case to run before all test cases
 // import { devices } from '@playwright/test';
 
@@ -23,3 +32,5 @@
 
 //   await browser.close();
 // }
+
+

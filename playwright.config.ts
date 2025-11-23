@@ -7,18 +7,20 @@ dotenv.config({
 // console.log(devices)
 
 export default defineConfig({
-  // globalSetup: require.resolve('./global-setup.ts'),
-  testDir: './tests',
-  timeout: 6 * 5 * 1000,
+  globalSetup: require.resolve('./global-setup.ts'),
+  globalTeardown: require.resolve('./global-teardown'),
+  testDir: './tests/ui',
+  timeout: 6 * 10 * 1000,
   expect: {
     timeout: 20000
   },
-  fullyParallel: false,
+  fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
+    // baseURL: 'www.google.com',
     headless: process.env.CI ? true : false,  //dynamic headless based on env
     screenshot: 'on',
     video: 'retain-on-failure',

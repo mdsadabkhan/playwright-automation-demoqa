@@ -8,8 +8,8 @@ class Utils {
     constructor(public page: Page) {
         this.page = page;
     }   
-    async navigateTo(url: string) {
-        return await this.page.goto(url);
+    async navigateTo(url: string, options: object = {}) {
+        return await this.page.goto(url, options);
     }
     async getTitle() {
         return await this.page.title();

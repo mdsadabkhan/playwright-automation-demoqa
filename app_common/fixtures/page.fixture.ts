@@ -15,6 +15,7 @@ import UploadAndDownloadSideTab from '../../src/pages/elementSection/UploadAndDo
 import DynamicPropertiesTab from '../../src/pages/elementSection/DynamicPropertiesTab'
 import FormsTab from '../../src/pages/formSection/FormsTab'
 import PracticeForm from '../../src/pages/formSection/PracticeForm'
+import AlertsFramesAndWindowsTab from '../../src/pages/alertsAndFrames/AlertsFramesAndWindowsTab'
 
 type TestFixture = {
     buttonsPage: ButtonsPage
@@ -31,6 +32,7 @@ type TestFixture = {
     dynamicPropertiesTab: DynamicPropertiesTab
     formsTab: FormsTab
     practiceForm: PracticeForm
+    alertsFramesAndWindowsTab: AlertsFramesAndWindowsTab
 
 }
  export const test = fixture.extend<TestFixture>({
@@ -76,7 +78,9 @@ type TestFixture = {
     },
     practiceForm: async ({page}, use)=>{
         await use(new PracticeForm(page))
+    },
+    alertsFramesAndWindowsTab: async ({page}, use)=>{
+        await use(new AlertsFramesAndWindowsTab(page))
     }
-
  })
 export default test

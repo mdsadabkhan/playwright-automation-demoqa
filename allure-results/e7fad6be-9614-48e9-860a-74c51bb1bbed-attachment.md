@@ -1,0 +1,113 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e3]:
+    - img "adplus-dvertising" [ref=e6] [cursor=pointer]
+    - iframe [ref=e9]:
+      
+  - generic [ref=e10]:
+    - banner [ref=e11]:
+      - link [ref=e12] [cursor=pointer]:
+        - /url: https://demoqa.com
+        - img [ref=e13] [cursor=pointer]
+    - generic [ref=e16]:
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - generic [ref=e22] [cursor=pointer]:
+            - generic [ref=e23] [cursor=pointer]:
+              - img [ref=e25] [cursor=pointer]
+              - text: Elements
+            - img [ref=e30] [cursor=pointer]
+          - list [ref=e35]:
+            - listitem [ref=e36] [cursor=pointer]:
+              - img [ref=e37] [cursor=pointer]
+              - generic [ref=e39] [cursor=pointer]: Text Box
+            - listitem [ref=e40] [cursor=pointer]:
+              - img [ref=e41] [cursor=pointer]
+              - generic [ref=e43] [cursor=pointer]: Check Box
+            - listitem [ref=e44] [cursor=pointer]:
+              - img [ref=e45] [cursor=pointer]
+              - generic [ref=e47] [cursor=pointer]: Radio Button
+            - listitem [ref=e48] [cursor=pointer]:
+              - img [ref=e49] [cursor=pointer]
+              - generic [ref=e51] [cursor=pointer]: Web Tables
+            - listitem [ref=e52] [cursor=pointer]:
+              - img [ref=e53] [cursor=pointer]
+              - generic [ref=e55] [cursor=pointer]: Buttons
+            - listitem [ref=e56] [cursor=pointer]:
+              - img [ref=e57] [cursor=pointer]
+              - generic [ref=e59] [cursor=pointer]: Links
+            - listitem [ref=e60] [cursor=pointer]:
+              - img [ref=e61] [cursor=pointer]
+              - generic [ref=e63] [cursor=pointer]: Broken Links - Images
+            - listitem [ref=e64] [cursor=pointer]:
+              - img [ref=e65] [cursor=pointer]
+              - generic [ref=e67] [cursor=pointer]: Upload and Download
+            - listitem [ref=e68] [cursor=pointer]:
+              - img [ref=e69] [cursor=pointer]
+              - generic [ref=e71] [cursor=pointer]: Dynamic Properties
+        - generic [ref=e74] [cursor=pointer]:
+          - generic [ref=e75] [cursor=pointer]:
+            - img [ref=e77] [cursor=pointer]
+            - text: Forms
+          - img [ref=e83] [cursor=pointer]
+        - generic [ref=e89] [cursor=pointer]:
+          - generic [ref=e90] [cursor=pointer]:
+            - img [ref=e92] [cursor=pointer]
+            - text: Alerts, Frame & Windows
+          - img [ref=e97] [cursor=pointer]
+        - generic [ref=e103] [cursor=pointer]:
+          - generic [ref=e104] [cursor=pointer]:
+            - img [ref=e106] [cursor=pointer]
+            - text: Widgets
+          - img [ref=e111] [cursor=pointer]
+        - generic [ref=e117] [cursor=pointer]:
+          - generic [ref=e118] [cursor=pointer]:
+            - img [ref=e120] [cursor=pointer]
+            - text: Interactions
+          - img [ref=e125] [cursor=pointer]
+        - generic [ref=e131] [cursor=pointer]:
+          - generic [ref=e132] [cursor=pointer]:
+            - img [ref=e134] [cursor=pointer]
+            - text: Book Store Application
+          - img [ref=e139] [cursor=pointer]
+      - generic [ref=e143]:
+        - generic [ref=e144]:
+          - heading "Dynamic Properties" [level=1] [ref=e145]
+          - paragraph [ref=e146]: This text has random Id
+          - button "Will enable 5 seconds" [disabled] [ref=e147] [cursor=pointer]
+          - button "Color Change" [ref=e148] [cursor=pointer]
+        - iframe [ref=e152]:
+          - generic [ref=f2e8] [cursor=pointer]:
+            - link [ref=f2e10] [cursor=pointer]:
+              - /url: https://clck.mgid.com/ghits/24996712/i/58092122/0/pp/1/13?h=idWH19TeWYKlT9jH3ulIcAZ8kHS2Xijh656xr-dzZZ2qLwU3m_puOt019UedxybmlLEQef0a2kAiPSHrl9nMAFauIqe7tdHzi2DN_yguBrcImXeVOnVn54KDcGHRjX5E&rid=f4e0add7-a839-11f0-943c-d404e676c2e0&ts=demoqa.com&tt=Referral&att=4&abd=1&iv=17&ct=1&gdprApplies=0&st=330&mp4=1&h2=o4zow8husbR0gfz0DlIEkzotcHMnYqNGVwm8XjpUrITqUd95bTSEBwmXOMB8XK7T_GuBo7OR77xb9nYIOSLk3w**&muid=p9dUhxY90uB6
+            - generic [ref=f2e13] [cursor=pointer]:
+              - link "Amazon" [ref=f2e15] [cursor=pointer]:
+                - /url: https://clck.mgid.com/ghits/24996712/i/58092122/0/pp/1/13?h=idWH19TeWYKlT9jH3ulIcAZ8kHS2Xijh656xr-dzZZ2qLwU3m_puOt019UedxybmlLEQef0a2kAiPSHrl9nMAFauIqe7tdHzi2DN_yguBrcImXeVOnVn54KDcGHRjX5E&rid=f4e0add7-a839-11f0-943c-d404e676c2e0&ts=demoqa.com&tt=Referral&att=4&abd=1&iv=17&ct=1&gdprApplies=0&st=330&mp4=1&h2=o4zow8husbR0gfz0DlIEkzotcHMnYqNGVwm8XjpUrITqUd95bTSEBwmXOMB8XK7T_GuBo7OR77xb9nYIOSLk3w**&muid=p9dUhxY90uB6
+              - link "EqualsTwo Anti Stretch Mark Oil" [ref=f2e17] [cursor=pointer]:
+                - /url: https://clck.mgid.com/ghits/24996712/i/58092122/0/pp/1/13?h=idWH19TeWYKlT9jH3ulIcAZ8kHS2Xijh656xr-dzZZ2qLwU3m_puOt019UedxybmlLEQef0a2kAiPSHrl9nMAFauIqe7tdHzi2DN_yguBrcImXeVOnVn54KDcGHRjX5E&rid=f4e0add7-a839-11f0-943c-d404e676c2e0&ts=demoqa.com&tt=Referral&att=4&abd=1&iv=17&ct=1&gdprApplies=0&st=330&mp4=1&h2=o4zow8husbR0gfz0DlIEkzotcHMnYqNGVwm8XjpUrITqUd95bTSEBwmXOMB8XK7T_GuBo7OR77xb9nYIOSLk3w**&muid=p9dUhxY90uB6
+              - link "Learn more→" [ref=f2e19] [cursor=pointer]:
+                - /url: https://clck.mgid.com/ghits/24996712/i/58092122/0/pp/1/13?h=idWH19TeWYKlT9jH3ulIcAZ8kHS2Xijh656xr-dzZZ2qLwU3m_puOt019UedxybmlLEQef0a2kAiPSHrl9nMAFauIqe7tdHzi2DN_yguBrcImXeVOnVn54KDcGHRjX5E&rid=f4e0add7-a839-11f0-943c-d404e676c2e0&ts=demoqa.com&tt=Referral&att=4&abd=1&iv=17&ct=1&gdprApplies=0&st=330&mp4=1&h2=o4zow8husbR0gfz0DlIEkzotcHMnYqNGVwm8XjpUrITqUd95bTSEBwmXOMB8XK7T_GuBo7OR77xb9nYIOSLk3w**&muid=p9dUhxY90uB6
+                - text: Learn more
+                - generic [ref=f2e20] [cursor=pointer]: →
+      - generic [ref=e157]:
+        - img "Build PlayWright tests with AI" [ref=e159] [cursor=pointer]
+        - iframe [ref=e162]:
+          - generic [ref=f3e7] [cursor=pointer]:
+            - link [ref=f3e8] [cursor=pointer]:
+              - /url: https://clck.mgid.com/ghits/24996712/i/58092113/0/pp/1/12?h=idWH19TeWYKlT9jH3ulIcNmm87SP1rbDOfjlVETTva8E6r5_22WXDv9hpDy9FBCglLEQef0a2kAiPSHrl9nMAFauIqe7tdHzi2DN_yguBrfPGhtmmsmyEB813_xLuU_z&rid=f4b6ac77-a839-11f0-9a04-c4cbe1e8d8dc&ts=demoqa.com&tt=Referral&att=4&abd=1&iv=17&ct=1&gdprApplies=0&st=330&mp4=1&h2=o4zow8husbR0gfz0DlIEk4NLSG4UbKMGxZxPQBEUpqa0S7QsOb4TyE5H_wq1CwLY8ErpFFHhHGNl7l8fvXrLuA**
+            - generic [ref=f3e9] [cursor=pointer]:
+              - link [ref=f3e11] [cursor=pointer]:
+                - /url: https://clck.mgid.com/ghits/24996712/i/58092113/0/pp/1/12?h=idWH19TeWYKlT9jH3ulIcNmm87SP1rbDOfjlVETTva8E6r5_22WXDv9hpDy9FBCglLEQef0a2kAiPSHrl9nMAFauIqe7tdHzi2DN_yguBrfPGhtmmsmyEB813_xLuU_z&rid=f4b6ac77-a839-11f0-9a04-c4cbe1e8d8dc&ts=demoqa.com&tt=Referral&att=4&abd=1&iv=17&ct=1&gdprApplies=0&st=330&mp4=1&h2=o4zow8husbR0gfz0DlIEk4NLSG4UbKMGxZxPQBEUpqa0S7QsOb4TyE5H_wq1CwLY8ErpFFHhHGNl7l8fvXrLuA**
+              - generic [ref=f3e14] [cursor=pointer]:
+                - link "EqualsTwo Anti Stretch Mark Oil" [ref=f3e16] [cursor=pointer]:
+                  - /url: https://clck.mgid.com/ghits/24996712/i/58092113/0/pp/1/12?h=idWH19TeWYKlT9jH3ulIcNmm87SP1rbDOfjlVETTva8E6r5_22WXDv9hpDy9FBCglLEQef0a2kAiPSHrl9nMAFauIqe7tdHzi2DN_yguBrfPGhtmmsmyEB813_xLuU_z&rid=f4b6ac77-a839-11f0-9a04-c4cbe1e8d8dc&ts=demoqa.com&tt=Referral&att=4&abd=1&iv=17&ct=1&gdprApplies=0&st=330&mp4=1&h2=o4zow8husbR0gfz0DlIEk4NLSG4UbKMGxZxPQBEUpqa0S7QsOb4TyE5H_wq1CwLY8ErpFFHhHGNl7l8fvXrLuA**
+                - link "Amazon" [ref=f3e18] [cursor=pointer]:
+                  - /url: https://clck.mgid.com/ghits/24996712/i/58092113/0/pp/1/12?h=idWH19TeWYKlT9jH3ulIcNmm87SP1rbDOfjlVETTva8E6r5_22WXDv9hpDy9FBCglLEQef0a2kAiPSHrl9nMAFauIqe7tdHzi2DN_yguBrfPGhtmmsmyEB813_xLuU_z&rid=f4b6ac77-a839-11f0-9a04-c4cbe1e8d8dc&ts=demoqa.com&tt=Referral&att=4&abd=1&iv=17&ct=1&gdprApplies=0&st=330&mp4=1&h2=o4zow8husbR0gfz0DlIEk4NLSG4UbKMGxZxPQBEUpqa0S7QsOb4TyE5H_wq1CwLY8ErpFFHhHGNl7l8fvXrLuA**
+                - link [ref=f3e19] [cursor=pointer]:
+                  - /url: https://clck.mgid.com/ghits/24996712/i/58092113/0/pp/1/12?h=idWH19TeWYKlT9jH3ulIcNmm87SP1rbDOfjlVETTva8E6r5_22WXDv9hpDy9FBCglLEQef0a2kAiPSHrl9nMAFauIqe7tdHzi2DN_yguBrfPGhtmmsmyEB813_xLuU_z&rid=f4b6ac77-a839-11f0-9a04-c4cbe1e8d8dc&ts=demoqa.com&tt=Referral&att=4&abd=1&iv=17&ct=1&gdprApplies=0&st=330&mp4=1&h2=o4zow8husbR0gfz0DlIEk4NLSG4UbKMGxZxPQBEUpqa0S7QsOb4TyE5H_wq1CwLY8ErpFFHhHGNl7l8fvXrLuA**
+                  - img [ref=f3e20] [cursor=pointer]
+    - contentinfo [ref=e163]:
+      - generic [ref=e164]: © 2013-2020 TOOLSQA.COM | ALL RIGHTS RESERVED.
+```

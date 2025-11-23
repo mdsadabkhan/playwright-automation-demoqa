@@ -21,6 +21,5 @@ test("@basic To Automate the basic amazon flow", async ({ page }) => {
     const createAccountMessage = await page.locator('p.a-spacing-none').textContent()
     console.log('The further step is mentioned as:', createAccountMessage)
 
-    
 
 });
