@@ -1,7 +1,7 @@
 import { expect } from '@playwright/test' 
 import test from '../../app_common/hooks' 
-const userDetails = JSON.parse(JSON.stringify(require('../../src/testData/resources/userData.json'))) 
-const employee = JSON.parse(JSON.stringify(require('../../src/testData/resources/projectData.json'))) 
+import userDetails from '../../src/testData/resources/userData.json'
+import employee from '../../src/testData/resources/projectData.json' 
 
 const fullName = userDetails.Sadab.fullName
 const email= userDetails.Sadab.email
@@ -120,4 +120,4 @@ test('@E2E To Verify all the section of from Elements section of the page', asyn
         await utils.takeScreenshot('dynamicProperties.png')
     })
 
-}) 
+})

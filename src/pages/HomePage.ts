@@ -16,7 +16,7 @@ class HomePage extends Utils{
         super(page)
         this.page = page
         this.url = String(ENV.URL)
-        this.elementsSection= 'div.category-cards>div:nth-of-type(1)'
+        this.elementsSection= 'a[href="/elements"]'
         this.fromsSection= 'div.category-cards>*:nth-child(2)'
         this.alertsFramesAndWindowsSection='div.category-cards>div:nth-of-type(3)'
         this.widgetsSection='div.category-cards>div:nth-of-type(4)'
