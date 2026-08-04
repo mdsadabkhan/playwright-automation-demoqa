@@ -22,7 +22,7 @@ export default globalSetup;
 
 //   // Call the logic from your desired spec file here
 //   // e.g., perform login, set session, download file, etc.
-//   await page.goto('https://yourapp.com/login');
+//   await page.goto('https://demoqa.com/login');
 //   await page.fill('#username', 'admin');
 //   await page.fill('#password', 'password');
 //   await page.click('button[type="submit"]');
